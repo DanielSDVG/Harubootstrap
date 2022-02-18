@@ -1,0 +1,12 @@
+{
+    "port": 8080,
+
+    "folders": {
+        "views": "/views",
+        "public": "/static",
+        "routes": "/src/routes",
+
+        "themesSrc": "/dist",
+        "themesPublic": "/static/css/themes"
+    }
+}

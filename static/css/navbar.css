@@ -1,0 +1,23 @@
+body {
+  overflow: hidden scroll;
+}
+
+#theme-list.show {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+#theme-list > li {
+  width: 100%;
+}
+
+@media (min-width: 450px) {
+  #theme-list.show {
+    width: 420px;
+  }
+
+  #theme-list > li {
+    width: 33.3333%;
+  }
+}

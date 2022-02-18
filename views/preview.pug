@@ -1,0 +1,105 @@
+extend _basepage.pug
+
+block link
+  link(rel="stylesheet" href=`/css/themes/${theme}/theme_allcolors.css`)
+  link(rel="stylesheet" href=`/css/navbar.css`)
+
+block content
+  .row
+    .col-12.col-md-4.col-lg-3
+      ul.nav.nav-pills.flex-column
+        each title, id in tabs
+          li.nav-item
+            if id === "accordion"
+              button.nav-link.active(data-bs-toggle="tab" data-bs-target=`#page-${id}`)= title
+            else
+              button.nav-link(data-bs-toggle="tab" data-bs-target=`#page-${id}`)= title
+    
+    .col-12.col-md-8.col-lg-9.mt-4.mt-md-0.tab-content
+
+      .tab-pane#page-typography
+        h1 Typography
+
+      .tab-pane#page-colors
+        h1 Colors
+
+        .row
+          .col-md-4
+            .p-3.mb-3.bg-primary.text-black Primary
+          .col-md-4
+            .p-3.mb-3.bg-secondary.text-black Secondary
+          .col-md-4
+            .p-3.mb-3.bg-success.text-black Success
+          .col-md-4
+            .p-3.mb-3.bg-danger.text-black Danger
+          .col-md-4
+            .p-3.mb-3.bg-warning.text-black Warning
+          .col-md-4
+            .p-3.mb-3.bg-info.text-white Info
+          .col-md-4
+            .p-3.mb-3.bg-light.text-black Light
+          .col-md-4
+            .p-3.mb-3.bg-dark.text-white Dark
+
+      .tab-pane.active#page-accordion
+        h1 Accordion
+
+      .tab-pane#page-alerts
+        h1 Alerts
+
+      .tab-pane#page-badge
+        h1 Badge
+
+      .tab-pane#page-breadcrumb
+        h1 Breadcrumb
+
+      .tab-pane#page-buttons
+        h1 Buttons
+
+      .tab-pane#page-card
+        h1 Cards
+
+      .tab-pane#page-carousel
+        h1 Carousel
+
+      .tab-pane#page-close-button
+        h1 Close button
+
+      .tab-pane#page-collapse
+        h1 Collapse
+
+      .tab-pane#page-dropdowns
+        h1 Dropdowns
+
+      .tab-pane#page-listgroup
+        h1 List group
+
+      .tab-pane#page-modal
+        h1 Modal
+
+      .tab-pane#page-nav-tab
+        h1 Navs & Tabs
+
+      .tab-pane#page-navbar
+        h1 Navbar
+
+      .tab-pane#page-offcanvas
+        h1 Offcanvas
+
+      .tab-pane#page-pagination
+        h1 Pagination
+
+      .tab-pane#page-popovers
+        h1 Popovers
+
+      .tab-pane#page-progress
+        h1 Progress
+
+      .tab-pane#page-spinners
+        h1 Spinners
+
+      .tab-pane#page-toasts
+        h1 Toasts
+
+      .tab-pane#page-tooltips
+        h1 Tooltips

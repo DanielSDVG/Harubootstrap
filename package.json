@@ -1,0 +1,29 @@
+{
+  "name": "harubootstrap",
+  "version": "1.0.0",
+  "description": "A collection of Bootstrap themes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bootstrap",
+    "themes"
+  ],
+  "author": "DanielSDVG",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "express": "^4.17.3",
+    "glob": "^7.2.0",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.49.8"
+  },
+  "files": [
+    "dist/**/*.{css,scss}"
+  ]
+}
