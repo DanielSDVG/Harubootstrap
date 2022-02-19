@@ -9,7 +9,7 @@ $all-colors: map-merge-multiple($blues, $indigos, $purples, $pinks, $reds, $oran
 $utilities: map-merge(
   $utilities,
   (
-    "color": map-merge(
+    "background-color": map-merge(
       map-get($utilities, "color"),
       (
         values: map-merge(
