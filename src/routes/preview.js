@@ -58,6 +58,7 @@ app.get('/theme/:name', (req, res) => {
     tabs: tabs,
     themeColors: themeColors,
     themeList: themes,
-    themeName: themes[req.params.name]
+    themeName: themes[req.params.name],
+    defaultTab: "colors"
   });
 });
