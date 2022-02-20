@@ -1,16 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-$cyan: #2AB7FF;
-$blue: #2D4BFF;
-$indigo: #A02FFD;
-$purple: #A02FFD;
-$green: #12C456;
-$yellow: #FFC000;
-$red: #FF5B5B;
-$orange: #FF9933;
-$info: $purple;
+$cyan: #2ab7ff;
+$blue: #2d4bff;
+$indigo: #5c2ffd;
+$purple: #a02ffd;
+$pink: #ff86f9;
+$green: #12c456;
+$yellow: #ffc000;
+$red: #ff5b5b;
+$orange: #ff9933;
+
 $primary: $cyan;
-$pink: rgb(255, 134, 249);
 $secondary: $pink;
+$info: $purple;
+
 $code-color: $red;
+$link-color: $blue;
 
 $font-family-sans-serif: "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"

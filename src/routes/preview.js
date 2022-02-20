@@ -26,10 +26,38 @@ tabs = {
   "tooltips": "Tooltips"
 };
 
+themes = {
+  "haruki-light": "Haruki Light",
+  "haruki-dark": "Haruki Dark",
+  "daimaru-light": "Daimaru Light",
+  "daimaru-dark": "Daimaru Dark"
+}
+
+themeColors = [
+  "blue",
+  "indigo",
+  "purple",
+  "pink",
+  "red",
+  "orange",
+  "yellow",
+  "green",
+  "teal",
+  "cyan",
+  "gray"
+]
+
 app.get('/', (req, res) => {
   res.redirect('/theme/haruki-light')
 });
 
 app.get('/theme/:name', (req, res) => {
-  res.render('preview', { htmlTitle: 'Hello World', theme: req.params.name, tabs: tabs });
+  res.render('preview', {
+    htmlTitle: 'Hello World',
+    theme: req.params.name,
+    tabs: tabs,
+    themeColors: themeColors,
+    themeList: themes,
+    themeName: themes[req.params.name]
+  });
 });

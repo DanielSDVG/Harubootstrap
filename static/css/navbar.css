@@ -12,12 +12,12 @@ body {
   width: 100%;
 }
 
-@media (min-width: 450px) {
+@media (min-width: 310px) {
   #theme-list.show {
-    width: 420px;
+    width: 280px;
   }
 
   #theme-list > li {
-    width: 33.3333%;
+    width: 50%;
   }
 }

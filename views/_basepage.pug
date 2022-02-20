@@ -22,7 +22,7 @@ html
     block body
 
       block navbar
-        nav.navbar.navbar-expand-lg.bg-light.navbar-light.navbar-fixed-top
+        nav.navbar.navbar-expand-lg.bg-light.navbar-light.navbar-fixed-top.d-print-none
           .container
 
             a.navbar-brand(href="/") harubootstrap
@@ -37,14 +37,9 @@ html
                   a.nav-link.dropdown-toggle(href="#" id="theme-dropdown" role="button" data-bs-toggle="dropdown" 
                   aria-expanded="false") Themes
                   ul.dropdown-menu.dropdown-menu-end#theme-list(aria-labelledby="theme-dropdown")
-                    li
-                      a.dropdown-item(href="/theme/haruki-light") Haruki Light
-                    li
-                      a.dropdown-item(href="/theme/daimaru-light") Daimaru Light
-                    li
-                      a.dropdown-item(href="/theme/haruki-dark") Haruki Dark
-                    li
-                      a.dropdown-item(href="/theme/daimaru-dark") Daimaru Dark
+                    each displayName, urlName in themeList
+                      li
+                        a.dropdown-item(href=`/theme/${urlName}`)= displayName
 
       .container.my-4
         block content
