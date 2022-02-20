@@ -1,5 +1,4 @@
 @import "_variables";
-@import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";
 
 $all-colors: map-merge-multiple($blues, $indigos, $purples, $pinks, $reds, $oranges,
