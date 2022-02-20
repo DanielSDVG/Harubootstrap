@@ -1,8 +1,6 @@
 const app = require('../server/app.js');
 
 tabs = {
-  "typography": "Typography",
-  "colors": "Colors",
   "accordion": "Accordion",
   "alerts": "Alerts",
   "badge": "Badge",
@@ -12,6 +10,7 @@ tabs = {
   "carousel": "Carousel",
   "close-button": "Close button",
   "collapse": "Collapse",
+  "colors": "Colors",
   "dropdowns": "Dropdowns",
   "listgroup": "List group",
   "modal": "Modal",
@@ -23,7 +22,8 @@ tabs = {
   "progress": "Progress",
   "spinners": "Spinners",
   "toasts": "Toasts",
-  "tooltips": "Tooltips"
+  "tooltips": "Tooltips",
+  "typography": "Typography"
 };
 
 themes = {
@@ -59,7 +59,7 @@ app.get('/theme/:name', (req, res) => {
     themeColors: themeColors,
     themeList: themes,
     themeName: themes[req.params.name],
-    defaultTab: "colors",
+    defaultTab: "accordion",
     colorVariants: ["primary", "secondary", "success", "danger", "warning", "info", "light", "dark"]
   });
 });
