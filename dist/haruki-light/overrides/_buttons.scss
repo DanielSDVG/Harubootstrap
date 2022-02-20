@@ -1,20 +1,19 @@
 $button-color-overrides: (
   // Background color, text color, text color when active
-  "primary": ( $primary, $black, $black ),
-  "secondary": ( $secondary, $black, $black ),
-  "success": ( $success, $white, $black ),
-  "danger": ( $danger, $white, $black ),
-  "warning": ( $warning, $black, $black ),
-  "info": ( $info, $white, $black ),
-  "light": ( $light, $black, $black ),
-  "dark": ( $dark, $white, $white )
+  "primary": ( $primary, $black ),
+  "secondary": ( $secondary, $black ),
+  "success": ( $success, $white ),
+  "danger": ( $danger, $white ),
+  "warning": ( $warning, $black ),
+  "info": ( $info, $white ),
+  "light": ( $light, $black),
+  "dark": ( $dark, $white )
 );
 
 @each $color, $value in $button-color-overrides {
 
   $background-color: nth($value, 1);
   $text-color: nth($value, 2);
-  $active-text-color: nth($value, 3);
 
   .btn-#{$color} {
     @include button-variant(
@@ -26,7 +25,7 @@ $button-color-overrides: (
       $hover-color: $text-color,
       $active-background: tint-color($background-color, $btn-active-bg-tint-amount),
       $active-border: $background-color,
-      $active-color: $active-text-color,
+      $active-color: $text-color,
       $disabled-color: $text-color
       );
   }
@@ -35,6 +34,8 @@ $button-color-overrides: (
     @include button-outline-variant(
       $color: $background-color,
       $color-hover: $text-color,
+      $active-background: tint-color($background-color, $btn-active-bg-tint-amount),
+      $active-border: $background-color,
       $active-color: $text-color
       );
   }
