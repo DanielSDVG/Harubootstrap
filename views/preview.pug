@@ -32,6 +32,9 @@ block content
         path(d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z")
       symbol#exclamation-triangle-fill(fill="currentColor" viewbox="0 0 16 16")
         path(d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z")
+      symbol#sample-image(fill="currentColor" style="font-size:1.125rem;text-anchor:middle")
+        rect(width="100%" height="100%" fill="#868e96")
+        text(x="50%" y="50%" fill="#dee2e6" dy=".3em") Sample image
 
     .col-12.col-md.mt-4.mt-md-0.tab-content
 
@@ -142,14 +145,14 @@ block content
       +tabpane("accordion")
 
         <h2>Accordion</h2>
-        <div class="accordion" id="accordionExample">
+        <div class="accordion" id="preview-accordion">
           <div class="accordion-item">
             <h3 class="accordion-header" id="headingOne">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Accordion Item #1
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#preview-collapse1" aria-expanded="true" aria-controls="preview-collapse1">
+                | Accordion Item #1
               </button>
             </h3>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div id="preview-collapse1" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#preview-accordion">
               <div class="accordion-body">
                 <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
               </div>
@@ -157,11 +160,11 @@ block content
           </div>
           <div class="accordion-item">
             <h3 class="accordion-header" id="headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Accordion Item #2
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#preview-collapse2" aria-expanded="false" aria-controls="preview-collapse2">
+                | Accordion Item #2
               </button>
             </h3>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div id="preview-collapse2" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#preview-accordion">
               <div class="accordion-body">
                 <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
               </div>
@@ -169,11 +172,11 @@ block content
           </div>
           <div class="accordion-item">
             <h3 class="accordion-header" id="headingThree">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Accordion Item #3
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#preview-collapse3" aria-expanded="false" aria-controls="preview-collapse3">
+                | Accordion Item #3
               </button>
             </h3>
-            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+            <div id="preview-collapse3" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#preview-accordion">
               <div class="accordion-body">
                 <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
               </div>
@@ -433,8 +436,254 @@ block content
 
         </div>
 
-
       +tabpane("card")
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="card bg-primary mb-3" style="max-width: 20rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h4 class="card-title">Primary card title</h4>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div>
+            <div class="card bg-secondary mb-3" style="max-width: 20rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h4 class="card-title">Secondary card title</h4>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div>
+            <div class="card text-white bg-success mb-3" style="max-width: 20rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h4 class="card-title">Success card title</h4>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div>
+            <div class="card text-white bg-danger mb-3" style="max-width: 20rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h4 class="card-title">Danger card title</h4>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div>
+            <div class="card bg-warning mb-3" style="max-width: 20rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h4 class="card-title">Warning card title</h4>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div>
+            <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h4 class="card-title">Info card title</h4>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div>
+            <div class="card bg-light mb-3" style="max-width: 20rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h4 class="card-title">Light card title</h4>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div>
+            <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h4 class="card-title">Dark card title</h4>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card border-primary mb-3" style="max-width: 20rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h4 class="card-title">Primary card title</h4>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div>
+            <div class="card border-secondary mb-3" style="max-width: 20rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h4 class="card-title">Secondary card title</h4>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div>
+            <div class="card border-success mb-3" style="max-width: 20rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h4 class="card-title">Success card title</h4>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div>
+            <div class="card border-danger mb-3" style="max-width: 20rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h4 class="card-title">Danger card title</h4>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div>
+            <div class="card border-warning mb-3" style="max-width: 20rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h4 class="card-title">Warning card title</h4>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div>
+            <div class="card border-info mb-3" style="max-width: 20rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h4 class="card-title">Info card title</h4>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div>
+            <div class="card border-light mb-3" style="max-width: 20rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h4 class="card-title">Light card title</h4>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div>
+            <div class="card border-dark mb-3" style="max-width: 20rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h4 class="card-title">Dark card title</h4>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="card mb-3">
+              <h3 class="card-header">Card header</h3>
+              <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <h6 class="card-subtitle text-muted">Support card subtitle</h6>
+              </div>
+              <svg class="img-fluid" width="500" role="img" aria-label="Sample image">
+                <use xlink:href="#sample-image"></use>
+              </svg>
+              <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Cras justo odio</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+              </ul>
+              <div class="card-body">
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+              </div>
+              <div class="card-footer text-muted">
+                | 2 days ago
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Card title</h4>
+                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card text-center mb-3">
+          <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="true" href="#">Active</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+              </li>
+            </ul>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+
+        <div class="card text-center mb-3">
+          <div class="card-header">
+            <ul class="nav nav-pills card-header-pills">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Active</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+              </li>
+            </ul>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <svg class="img-fluid rounded-start" height="250" role="img" aria-label="Sample image">
+                <use xlink:href="#sample-image"></use>
+              </svg>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-group mb-3">
+          <div class="card">
+            <svg class="card-img-top" role="img" aria-label="Sample image">
+              <use xlink:href="#sample-image"></use>
+            </svg>
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+          <div class="card">
+            <svg class="card-img-top" role="img" aria-label="Sample image">
+              <use xlink:href="#sample-image"></use>
+            </svg>
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+          <div class="card">
+            <svg class="card-img-top" role="img" aria-label="Sample image">
+              <use xlink:href="#sample-image"></use>
+            </svg>
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
 
       +tabpane("carousel")
 
