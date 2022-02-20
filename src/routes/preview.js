@@ -59,6 +59,7 @@ app.get('/theme/:name', (req, res) => {
     themeColors: themeColors,
     themeList: themes,
     themeName: themes[req.params.name],
-    defaultTab: "colors"
+    defaultTab: "colors",
+    colorVariants: ["primary", "secondary", "success", "danger", "warning", "info", "light", "dark"]
   });
 });

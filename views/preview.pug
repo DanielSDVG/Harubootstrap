@@ -42,29 +42,38 @@ block content
 
       +tabpane("colors")
 
-        h2 Main colors
-        p These are the base colors:
+        <h2>Main colors</h2>
+        <p>These are the base colors:</p>
 
-        .row
-          .col-md-4
-            .p-3.mb-3.bg-primary.text-black Primary
-          .col-md-4
-            .p-3.mb-3.bg-secondary.text-black Secondary
-          .col-md-4
-            .p-3.mb-3.bg-success.text-black Success
-          .col-md-4
-            .p-3.mb-3.bg-danger.text-black Danger
-          .col-md-4
-            .p-3.mb-3.bg-warning.text-black Warning
-          .col-md-4
-            .p-3.mb-3.bg-info.text-white Info
-          .col-md-4
-            .p-3.mb-3.bg-light.text-black Light
-          .col-md-4
-            .p-3.mb-3.bg-dark.text-white Dark
+        <div class="row">
+          <div class="col-md-4">
+            <div class="p-3 mb-3 bg-primary">Primary</div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 mb-3 bg-secondary">Secondary</div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 mb-3 bg-success text-white">Success</div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 mb-3 bg-danger text-white">Danger</div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 mb-3 bg-warning">Warning</div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 mb-3 bg-info text-white">Info</div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 mb-3 bg-light">Light</div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 mb-3 bg-dark text-white">Dark</div>
+          </div>
+        </div>
 
-        h2 All colors
-        p Here is the full color pallette:
+        <h2>All colors</h2>
+        <p>Here is the full color pallette:</p>
         .row
           each color in themeColors
             .col-md-4.mb-3
@@ -89,88 +98,146 @@ block content
               span(class="preview-hex-white")
 
       +tabpane("accordion")
-        .accordion
-          .accordion-item
-            h2.accordion-header
-              button.accordion-button(type="button" data-bs-toggle="collapse" data-bs-target="#preview-accordion-collapse1" aria-expanded="true" aria-controls="preview-accordion-collapse1")
-                | Accordion Item #1
-            #preview-accordion-collapse1.accordion-collapse.collapse.show
-              .accordion-body
-                strong This is the first item&apos;s accordion body.
-                |  It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It&apos;s also worth noting that just about any HTML can go within the 
-                code .accordion-body
-                | , though the transition does limit overflow.
-            .accordion-item
-            h2.accordion-header
-              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#preview-accordion-collapse2" aria-expanded="false" aria-controls="preview-accordion-collapse2")
-                | Accordion Item #2
-            #preview-accordion-collapse2.accordion-collapse.collapse
-              .accordion-body
-                strong This is the second item&apos;s accordion body.
-                |  It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It&apos;s also worth noting that just about any HTML can go within the 
-                code .accordion-body
-                | , though the transition does limit overflow.
-            .accordion-item
-            h2.accordion-header
-              button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#preview-accordion-collapse3" aria-expanded="false" aria-controls="preview-accordion-collapse3")
-                | Accordion Item #3
-            #preview-accordion-collapse3.accordion-collapse.collapse
-              .accordion-body
-                strong This is the third item&apos;s accordion body.
-                |  It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It&apos;s also worth noting that just about any HTML can go within the 
-                code .accordion-body
-                | , though the transition does limit overflow.
+
+        <h2>Accordion</h2>
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Accordion Item #1
+              </button>
+            </h3>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Accordion Item #2
+              </button>
+            </h3>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Accordion Item #3
+              </button>
+            </h3>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              </div>
+            </div>
+          </div>
+        </div>
 
       +tabpane("alerts")
 
-        .alert(role="alert")
-          | An alert with no color and 
-          a.alert-link(href="#") an example link
-          | . Give it a click if you like.
+        <h2>Alerts</h2>
+        each variant in colorVariants
+          <div class="alert alert-#{variant}" role="alert">
+            | A simple #{variant} alert with <a class="alert-link" href="#">an example link</a>. Give it a click if you like.
+          </div>
 
-        each variant in ["primary", "secondary", "success", "danger", "warning", "info", "light", "dark"]
-          .alert(class=`alert-${variant}` role="alert")
-            | A simple #{variant} alert with 
-            a.alert-link(href="#") an example link
-            | . Give it a click if you like.
+        <h2>Alerts with icons</h2>
+        <div class="alert alert-success" role="alert">
+          <svg class="flex-shrink-0 me-2 mb-2 float-start" width="24" height="24" role="img" aria-label="Success:">
+            <use xlink:href="#check-circle-fill"></use>
+          </svg>
+          <h4 class="alert-heading">Well done!</h4>
+          <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+          <hr />
+          <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+        </div>
+        
+        <div class="alert alert-primary d-flex align-items-center" role="alert">
+          <svg class="flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
+            <use xlink:href="#info-fill"></use>
+          </svg>
+          <div>An example alert with an icon</div>
+        </div>
 
-        .alert.alert-success(role="alert")
-          svg.flex-shrink-0.me-2.mb-2.float-start(width="24" height="24" role="img" aria-label="Success:")
-            use(xlink:href="#check-circle-fill")
-          h4.alert-heading Well done!
-          p
-            | Aww yeah, you successfully read this important alert message. This example text
-            | is going to run a bit longer so that you can see how spacing within an alert works
-            | with this kind of content.
-          hr
-          p.mb-0 Whenever you need to, be sure to use margin utilities to keep things nice and tidy.
+        <div class="alert alert-success d-flex align-items-center" role="alert">
+          <svg class="flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
+            <use xlink:href="#check-circle-fill"></use>
+          </svg>
+          <div>An example success alert with an icon</div>
+        </div>
 
-        .alert.alert-primary.d-flex.align-items-center(role="alert")
-          svg.flex-shrink-0.me-2(width="24" height="24" role="img" aria-label="Info:")
-            use(xlink:href="#info-fill")
-          div
-            | An example alert with an icon
-        .alert.alert-success.d-flex.align-items-center(role="alert")
-          svg.flex-shrink-0.me-2(width="24" height="24" role="img" aria-label="Success:")
-            use(xlink:href="#check-circle-fill")
-          div
-            | An example success alert with an icon
-        .alert.alert-warning.d-flex.align-items-center(role="alert")
-          svg.flex-shrink-0.me-2(width="24" height="24" role="img" aria-label="Warning:")
-            use(xlink:href="#exclamation-triangle-fill")
-          div
-            | An example warning alert with an icon
-        .alert.alert-danger.d-flex.align-items-center(role="alert")
-          svg.flex-shrink-0.me-2(width="24" height="24" role="img" aria-label="Danger:")
-            use(xlink:href="#exclamation-triangle-fill")
-          div
-            | An example danger alert with an icon
-        .alert.alert-warning.alert-dismissible.fade.show(role="alert")
-          strong Holy guacamole!
-          |  You should check in on some of those fields below.
-          button.btn-close(type="button" data-bs-dismiss="alert" aria-label="Close")
+        <div class="alert alert-warning d-flex align-items-center" role="alert">
+          <svg class="flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:">
+            <use xlink:href="#exclamation-triangle-fill"></use>
+          </svg>
+          <div>An example warning alert with an icon</div>
+        </div>
+
+        <div class="alert alert-danger d-flex align-items-center" role="alert">
+          <svg class="flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
+            <use xlink:href="#exclamation-triangle-fill"></use>
+          </svg>
+          <div>An example danger alert with an icon</div>
+        </div>
+
+        <h2>Dismissible alert</h2>
+
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+          <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
 
       +tabpane("badge")
+
+        <h2>Rectangular badges</h2>
+        <p>
+          <span class="badge bg-primary text-dark">Primary</span>
+          <span class="badge bg-secondary text-dark">Secondary</span>
+          <span class="badge bg-success">Success</span>
+          <span class="badge bg-danger">Danger</span>
+          <span class="badge bg-warning text-dark">Warning</span>
+          <span class="badge bg-info">Info</span>
+          <span class="badge bg-light text-dark">Light</span>
+          <span class="badge bg-dark">Dark</span>
+        </p>
+        
+        <h2>Rounded badges</h2>
+        <p>
+          <span class="badge rounded-pill bg-primary text-dark">Primary</span>
+          <span class="badge rounded-pill bg-secondary text-dark">Secondary</span>
+          <span class="badge rounded-pill bg-success">Success</span>
+          <span class="badge rounded-pill bg-danger">Danger</span>
+          <span class="badge rounded-pill bg-warning text-dark">Warning</span>
+          <span class="badge rounded-pill bg-info">Info</span>
+          <span class="badge rounded-pill bg-light text-dark">Light</span>
+          <span class="badge rounded-pill bg-dark">Dark</span>
+        </p>
+
+        <h2>Badges with buttons</h2>
+
+        <button type="button" class="btn btn-primary">
+          | Notifications <span class="badge bg-danger">4</span>
+        </button>
+
+        <button type="button" class="btn btn-primary position-relative me-4">
+          | Inbox
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            | 99+ <span class="visually-hidden">unread messages</span>
+          </span>
+        </button>
+        
+        <button type="button" class="btn btn-primary position-relative">
+          | Profile
+          <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger rounded-circle">
+            <span class="visually-hidden">New alerts</span>
+          </span>
+        </button>
 
       +tabpane("breadcrumb")
 
