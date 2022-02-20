@@ -1,5 +1,7 @@
 @import "_variables";
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
+/*! Bootstrap overrides for this theme */
 @import "overrides/_document";
 @import "overrides/_print";
+@import "overrides/_buttons";
