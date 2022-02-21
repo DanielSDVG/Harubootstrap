@@ -8,9 +8,9 @@ tabs = {
   "buttons": "Buttons",
   "card": "Cards",
   "carousel": "Carousel",
-  "collapse": "Collapse",
   "colors": "Colors",
   "dropdowns": "Dropdowns",
+  "forms": "Forms",
   "listgroup": "List group",
   "modal": "Modal",
   "nav-tab": "Navs & Tabs",
@@ -20,6 +20,7 @@ tabs = {
   "popovers": "Popovers",
   "progress": "Progress",
   "spinners": "Spinners",
+  "tables": "Tables",
   "toasts": "Toasts",
   "tooltips": "Tooltips",
   "typography": "Typography"
