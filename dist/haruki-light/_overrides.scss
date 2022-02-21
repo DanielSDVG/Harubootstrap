@@ -1,3 +1,32 @@
+// Document
+// =============================================================================
+
+body {
+  overflow: hidden scroll;
+}
+
+::selection {
+  background-color: rgba($primary, 20%);
+  color: inherit;
+}
+-moz-::selection {
+  background-color: rgba($primary, 20%);
+  color: inherit;
+}
+
+@media print {
+  html, body {
+    font-size: 10pt;
+  }
+}
+
+@page {
+  margin: 1cm 1.5cm;
+}
+
+// Buttons
+// =============================================================================
+
 $button-color-overrides: (
   // Background color, text color, text color when active
   "primary": ( $primary, $black ),
