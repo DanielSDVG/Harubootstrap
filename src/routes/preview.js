@@ -8,7 +8,6 @@ tabs = {
   "buttons": "Buttons",
   "card": "Cards",
   "carousel": "Carousel",
-  "close-button": "Close button",
   "collapse": "Collapse",
   "colors": "Colors",
   "dropdowns": "Dropdowns",
