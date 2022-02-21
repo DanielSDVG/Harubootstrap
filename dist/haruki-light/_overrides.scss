@@ -106,12 +106,15 @@ $override-card-colors: (
       background-color: $color2 !important;
     }
 
-    .nav-tabs {
-      .nav-link.active,
-      .nav-item.show .nav-link {
-        border-color: $color1 !important;
-        background-color: $color2 !important;
-        border-bottom: none;
+
+    .card-header,
+    .card-footer {
+      > .nav-tabs {
+        .nav-link.active,
+        .nav-item.show .nav-link {
+          border-color: $color1 $color1 $color2 $color1;
+          background-color: $color2 !important;
+        }
       }
     }
 
@@ -130,11 +133,15 @@ $override-card-colors: (
       border-color: $color1 !important;
     }
 
-    .nav-tabs {
-      .nav-link.active,
-      .nav-item.show .nav-link {
-        border-color: $color1 !important;
-        border-bottom: none;
+    .card-header,
+    .card-footer {
+      > .nav-tabs {
+        .nav-link.active,
+        .nav-item.show .nav-link {
+          border-top-color: $color1;
+          border-left-color: $color1;
+          border-right-color: $color1;
+        }
       }
     }
 
