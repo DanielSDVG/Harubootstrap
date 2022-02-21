@@ -60,6 +60,7 @@ app.get('/theme/:name', (req, res) => {
     themeList: themes,
     themeName: themes[req.params.name],
     defaultTab: "accordion",
-    colorVariants: ["primary", "secondary", "success", "danger", "warning", "info", "light", "dark"]
+    colorVariants: ["primary", "secondary", "success", "danger", "warning", "info", "light", "dark"],
+    whiteTextVariants: ["success", "danger", "info", "dark"]
   });
 });

@@ -69,3 +69,75 @@ $button-color-overrides: (
       );
   }
 }
+
+// Cards
+// =============================================================================
+
+$override-card-colors: (
+  "primary":    ($primary,    tint-color($primary, 50%),    tint-color($primary, 70%)),
+  "secondary":  ($secondary,  tint-color($secondary, 50%),  tint-color($secondary, 70%)),
+  "success":    ($success,    tint-color($success, 50%),    tint-color($success, 70%)),
+  "danger":     ($danger,     tint-color($danger, 50%),     tint-color($danger, 70%)),
+  "warning":    ($warning,    tint-color($warning, 50%),    tint-color($warning, 70%)),
+  "info":       ($info,       tint-color($info, 50%),       tint-color($info, 70%)),
+  "light":      ($light,      tint-color($light, 50%),      tint-color($light, 70%)),
+  "dark":       ($dark,       tint-color($dark, 70%),       tint-color($dark, 80%))
+);
+
+@each $variant, $colors in $override-card-colors {
+
+  $color1: nth($colors, 1);
+  $color2: nth($colors, 2);
+  $color3: nth($colors, 3);
+
+  .card.bg-#{$variant} {
+
+    border-color: $color1 !important;
+    background-color: $color2 !important;
+
+    .card-header,
+    .card-footer,
+    .list-group,
+    .list-group-item {
+      border-color: $color1 !important;
+    }
+
+    .list-group-item {
+      background-color: $color2 !important;
+    }
+
+    .nav-tabs {
+      .nav-link.active,
+      .nav-item.show .nav-link {
+        border-color: $color1 !important;
+        background-color: $color2 !important;
+        border-bottom: none;
+      }
+    }
+
+  }
+
+  .card.border-#{$variant} {
+
+    .card-header,
+    .card-footer {
+      background-color: $color3 !important;
+    }
+
+    .card-header,
+    .card-footer,
+    .list-group-item {
+      border-color: $color1 !important;
+    }
+
+    .nav-tabs {
+      .nav-link.active,
+      .nav-item.show .nav-link {
+        border-color: $color1 !important;
+        border-bottom: none;
+      }
+    }
+
+  }
+
+}
