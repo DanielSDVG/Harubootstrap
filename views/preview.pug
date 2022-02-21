@@ -36,6 +36,24 @@ block content
       symbol#sample-image(fill="currentColor" style="font-size:1.125rem;text-anchor:middle")
         rect(width="100%" height="100%" fill="#868e96")
         text(x="50%" y="50%" fill="#dee2e6" dy=".3em") Sample image
+      symbol#carousel-slide1(fill="currentColor" style="font-size:1.5rem;text-anchor:middle")
+        rect(width="100%" height="100%" fill="#666")
+        text(x="50%" y="50%" fill="#dee2e6" dy=".3em") First slide
+      symbol#carousel-slide2(fill="currentColor" style="font-size:1.5rem;text-anchor:middle")
+        rect(width="100%" height="100%" fill="#555")
+        text(x="50%" y="50%" fill="#dee2e6" dy=".3em") Second slide
+      symbol#carousel-slide3(fill="currentColor" style="font-size:1.5rem;text-anchor:middle")
+        rect(width="100%" height="100%" fill="#444")
+        text(x="50%" y="50%" fill="#dee2e6" dy=".3em") Third slide
+      symbol#carousel-slide1-inv(fill="currentColor" style="font-size:1.5rem;text-anchor:middle")
+        rect(width="100%" height="100%" fill="#CCC")
+        text(x="50%" y="50%" fill="#333" dy=".3em") First slide
+      symbol#carousel-slide2-inv(fill="currentColor" style="font-size:1.5rem;text-anchor:middle")
+        rect(width="100%" height="100%" fill="#DDD")
+        text(x="50%" y="50%" fill="#333" dy=".3em") Second slide
+      symbol#carousel-slide3-inv(fill="currentColor" style="font-size:1.5rem;text-anchor:middle")
+        rect(width="100%" height="100%" fill="#EEE")
+        text(x="50%" y="50%" fill="#333" dy=".3em") Third slide
 
     .col-12.col-md.mt-4.mt-md-0.tab-content
 
@@ -118,8 +136,7 @@ block content
           </div>
         </div>
 
-        <h2>All colors</h2>
-        <p>Here is the full color pallette:</p>
+        <h2>Tints & Shades</h2>
         .row
           each color in themeColors
             .col-md-4.mb-3
@@ -630,11 +647,97 @@ block content
           </div>
         </div>
 
-        
-
       +tabpane("carousel")
 
-      +tabpane("close-button")
+        <div id="preview-carousel" class="carousel slide mb-3" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#preview-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#preview-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#preview-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <svg class="d-block w-100" height="500" role="img" aria-label="First slide">
+                <use xlink:href="#carousel-slide1"></use>
+              </svg>
+              <div class="carousel-caption d-none d-md-block">
+                <h5>First slide label</h5>
+                <p>Some representative placeholder content for the first slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <svg class="d-block w-100" height="500" role="img" aria-label="Second slide">
+                <use xlink:href="#carousel-slide2"></use>
+              </svg>
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Second slide label</h5>
+                <p>Some representative placeholder content for the second slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <svg class="d-block w-100" height="500" role="img" aria-label="Third slide">
+                <use xlink:href="#carousel-slide3"></use>
+              </svg>
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>Some representative placeholder content for the third slide.</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#preview-carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#preview-carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+        <div id="preview-carousel-inv" class="carousel carousel-dark slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#preview-carousel-inv" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#preview-carousel-inv" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#preview-carousel-inv" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <svg class="d-block w-100" height="500" role="img" aria-label="First slide">
+                <use xlink:href="#carousel-slide1-inv"></use>
+              </svg>
+              <div class="carousel-caption d-none d-md-block">
+                <h5>First slide label</h5>
+                <p>Some representative placeholder content for the first slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <svg class="d-block w-100" height="500" role="img" aria-label="Second slide">
+                <use xlink:href="#carousel-slide2-inv"></use>
+              </svg>
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Second slide label</h5>
+                <p>Some representative placeholder content for the second slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <svg class="d-block w-100" height="500" role="img" aria-label="Third slide">
+                <use xlink:href="#carousel-slide3-inv"></use>
+              </svg>
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>Some representative placeholder content for the third slide.</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#preview-carousel-inv" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#preview-carousel-inv" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
 
       +tabpane("collapse")
 
