@@ -1,8 +1,8 @@
 extend _basepage.pug
 
 block link
-  link(rel="stylesheet" href=`/css/themes/${theme}/theme.css`)
-  link(rel="stylesheet" href=`/css/themes/${theme}/colorpreview.css`)
+  link(rel="stylesheet" href=`/css/themes/${themeId}/theme.css`)
+  link(rel="stylesheet" href=`/css/themes/${themeId}/colorpreview.css`)
   link(rel="stylesheet" href="/css/layout.css")
   link(rel="stylesheet" href="/css/colorpreview.css")
 
@@ -57,7 +57,7 @@ block content
 
     .col-12.col-md.mt-4.mt-md-0.tab-content
 
-      h1= themeName
+      h1= theme.name
       hr
 
       +tabpane("typography")
@@ -206,30 +206,13 @@ block content
         <p>These are the base colors:</p>
 
         <div class="row">
-          <div class="col-md-4">
-            <div class="p-3 mb-3 bg-primary">Primary</div>
-          </div>
-          <div class="col-md-4">
-            <div class="p-3 mb-3 bg-secondary">Secondary</div>
-          </div>
-          <div class="col-md-4">
-            <div class="p-3 mb-3 bg-success text-white">Success</div>
-          </div>
-          <div class="col-md-4">
-            <div class="p-3 mb-3 bg-danger text-white">Danger</div>
-          </div>
-          <div class="col-md-4">
-            <div class="p-3 mb-3 bg-warning">Warning</div>
-          </div>
-          <div class="col-md-4">
-            <div class="p-3 mb-3 bg-info text-white">Info</div>
-          </div>
-          <div class="col-md-4">
-            <div class="p-3 mb-3 bg-light">Light</div>
-          </div>
-          <div class="col-md-4">
-            <div class="p-3 mb-3 bg-dark text-white">Dark</div>
-          </div>
+          each variant in colorVariants
+            <div class="col-md-4">
+              if theme.applyWhiteTextOnCards && theme.whiteTextVariants.includes(variant) 
+                <div class="p-3 mb-3 bg-#{variant} text-white">#{variant}</div>
+              else
+                <div class="p-3 mb-3 bg-#{variant}">#{variant}</div>
+            </div>
         </div>
 
         <h2>Tints & Shades</h2>
@@ -357,7 +340,7 @@ block content
         <h2>Rectangular badges</h2>
         <p>
           each variant in colorVariants
-            if whiteTextVariants.includes(variant)
+            if theme.whiteTextVariants.includes(variant)
               <span class="badge bg-#{variant}">#{variant}</span>&nbsp;
             else
               <span class="badge bg-#{variant} text-dark">#{variant}</span>&nbsp;
@@ -366,7 +349,7 @@ block content
         <h2>Rounded badges</h2>
         <p>
           each variant in colorVariants
-            if whiteTextVariants.includes(variant)
+            if theme.whiteTextVariants.includes(variant)
               <span class="badge rounded-pill bg-#{variant}">#{variant}</span>&nbsp;
             else
               <span class="badge rounded-pill bg-#{variant} text-dark">#{variant}</span>&nbsp;
@@ -556,10 +539,19 @@ block content
 
       +tabpane("card")
 
+        -
+          function whiteTextOnCard(variant) {
+            if (theme.applyWhiteTextOnCards && theme.whiteTextVariants.includes(variant) ) {
+              return "text-white";
+            } else {
+              return "";
+            }
+          }
+
         <div class="row mb-3">
           <div class="col-lg-4">
             each variant in colorVariants
-              <div class="card bg-#{variant} mb-3" style="max-width: 20rem;">
+              <div class="card bg-#{variant} #{whiteTextOnCard(variant)} mb-3" style="max-width: 20rem;">
                 <div class="card-header">Header</div>
                 <div class="card-body">
                   <h4 class="card-title">#{variant} card title</h4>
@@ -616,65 +608,66 @@ block content
         </div>
 
         each modifier in ["", "bg-primary", "border-primary", "bg-info", "border-info"]
+          if !theme.applyWhiteTextOnCards || !modifier.startsWith("bg-")
 
-          <div class="card text-center mb-3 #{modifier}">
-            <div class="card-header">
-              <ul class="nav nav-tabs card-header-tabs">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="true" href="#">Active</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled">Disabled</a>
-                </li>
-              </ul>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-
-          <div class="card text-center mb-3 #{modifier}">
-            <div class="card-header">
-              <ul class="nav nav-pills card-header-pills">
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">Active</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled">Disabled</a>
-                </li>
-              </ul>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-
-          <div class="card mb-3 #{modifier}" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <svg class="img-fluid rounded-start" height="250" role="img" aria-label="Sample image">
-                  <use xlink:href="#sample-image"></use>
-                </svg>
+            <div class="card text-center mb-3 #{modifier}">
+              <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="true" href="#">Active</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled">Disabled</a>
+                  </li>
+                </ul>
               </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+
+            <div class="card text-center mb-3 #{modifier}">
+              <div class="card-header">
+                <ul class="nav nav-pills card-header-pills">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#">Active</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled">Disabled</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+
+            <div class="card mb-3 #{modifier}" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <svg class="img-fluid rounded-start" height="250" role="img" aria-label="Sample image">
+                    <use xlink:href="#sample-image"></use>
+                  </svg>
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
         <div class="card-group mb-3">
           <div class="card">
@@ -709,38 +702,39 @@ block content
           </div>
         </div>
 
-        <div class="card-group mb-3">
-          <div class="card bg-primary">
-            <svg class="card-img-top" role="img" aria-label="Sample image">
-              <use xlink:href="#sample-image"></use>
-            </svg>
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        if !theme.applyWhiteTextOnCards
+          <div class="card-group mb-3">
+            <div class="card bg-primary #{whiteTextOnCard(variant)}">
+              <svg class="card-img-top" role="img" aria-label="Sample image">
+                <use xlink:href="#sample-image"></use>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            <div class="card bg-info #{whiteTextOnCard(variant)}">
+              <svg class="card-img-top" role="img" aria-label="Sample image">
+                <use xlink:href="#sample-image"></use>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            <div class="card bg-success #{whiteTextOnCard(variant)}">
+              <svg class="card-img-top" role="img" aria-label="Sample image">
+                <use xlink:href="#sample-image"></use>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
             </div>
           </div>
-          <div class="card bg-info">
-            <svg class="card-img-top" role="img" aria-label="Sample image">
-              <use xlink:href="#sample-image"></use>
-            </svg>
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
-          <div class="card bg-success">
-            <svg class="card-img-top" role="img" aria-label="Sample image">
-              <use xlink:href="#sample-image"></use>
-            </svg>
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
-        </div>
 
         <div class="card bg-dark text-white">
           <svg class="card-img" role="img" aria-label="Sample image">

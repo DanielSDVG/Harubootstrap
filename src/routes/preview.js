@@ -27,10 +27,16 @@ tabs = {
 };
 
 themes = {
-  "haruki-light": "Haruki Light",
-  "haruki-dark": "Haruki Dark",
-  "daimaru-light": "Daimaru Light",
-  "daimaru-dark": "Daimaru Dark"
+  "haruki-light": {
+    name: "Haruki Light",
+    whiteTextVariants: ["success", "danger", "info", "dark"],
+    applyWhiteTextOnCards: false
+  },
+  "default": {
+    name: "Bootstrap Default",
+    whiteTextVariants: ["primary", "secondary", "success", "danger", "dark"],
+    applyWhiteTextOnCards: true
+  }
 }
 
 themeColors = [
@@ -54,13 +60,12 @@ app.get('/', (req, res) => {
 app.get('/theme/:name', (req, res) => {
   res.render('preview', {
     htmlTitle: 'Hello World',
-    theme: req.params.name,
+    themeId: req.params.name,
     tabs: tabs,
     themeColors: themeColors,
     themeList: themes,
-    themeName: themes[req.params.name],
+    theme: themes[req.params.name],
     defaultTab: "accordion",
     colorVariants: ["primary", "secondary", "success", "danger", "warning", "info", "light", "dark"],
-    whiteTextVariants: ["success", "danger", "info", "dark"]
   });
 });

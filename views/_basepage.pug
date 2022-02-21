@@ -37,9 +37,9 @@ html
                   a.nav-link.dropdown-toggle(href="#" id="theme-dropdown" role="button" data-bs-toggle="dropdown" 
                   aria-expanded="false") Themes
                   ul.dropdown-menu.dropdown-menu-end#theme-list(aria-labelledby="theme-dropdown")
-                    each displayName, urlName in themeList
+                    each theme, urlName in themeList
                       li
-                        a.dropdown-item(href=`/theme/${urlName}`)= displayName
+                        a.dropdown-item(href=`/theme/${urlName}`)= theme.name
 
       .container.my-4
         block content

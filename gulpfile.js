@@ -1,19 +1,28 @@
-const gulp = require('gulp');
-const sass = require('gulp-sass')(require('sass'));
+const gulp = require("gulp");
+const sass = require("gulp-sass")(require("sass"));
 
-const config = require('./config.json');
+const config = require("./config.json");
 
-function buildThemes() {
+function buildAllThemes() {
   return gulp.src(`.${config.folders.themesSrc}/**/[!_]*.scss`)
     .pipe(
       sass({
-        outputStyle: 'compressed'
-      }).on('error', sass.logError)
+        outputStyle: "compressed"
+      }).on("error", sass.logError)
     )
     .pipe(gulp.dest(`.${config.folders.themesPublic}`))
     .pipe(gulp.dest(`.${config.folders.themesSrc}`));
 }
 
-exports.themes = buildThemes
+function buildOneTheme(name) {
+  return gulp.src(`.${config.folders.themesSrc}/${name}/[!_]*.scss`)
+    .pipe(
+      sass({
+        outputStyle: "compressed"
+      }).on("error", sass.logError)
+    )
+    .pipe(gulp.dest(`.${config.folders.themesPublic}`))
+    .pipe(gulp.dest(`.${config.folders.themesSrc}`));
+}
 
-exports.default = buildThemes;
+exports.default = () => buildOneTheme("haruki-light");
