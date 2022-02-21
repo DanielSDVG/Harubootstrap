@@ -110,6 +110,9 @@ $override-card-colors: (
     .card-header,
     .card-footer {
       > .nav-tabs {
+        .nav-link:hover {
+          border-color: transparent;
+        }
         .nav-link.active,
         .nav-item.show .nav-link {
           border-color: $color1 $color1 $color2 $color1;
@@ -136,6 +139,9 @@ $override-card-colors: (
     .card-header,
     .card-footer {
       > .nav-tabs {
+        .nav-link:hover {
+          border-color: transparent;
+        }
         .nav-link.active,
         .nav-item.show .nav-link {
           border-top-color: $color1;
