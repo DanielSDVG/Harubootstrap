@@ -16,7 +16,6 @@ tabs = {
   "navbar": "Navbar",
   "offcanvas": "Offcanvas",
   "pagination": "Pagination",
-  "popovers": "Popovers",
   "progress": "Progress",
   "spinners": "Spinners",
   "tables": "Tables",

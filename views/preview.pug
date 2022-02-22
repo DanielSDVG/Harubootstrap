@@ -50,6 +50,14 @@ mixin table-content
       <td>@twitter</td>
     </tr>
   </tbody>
+  <tfoot>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </tfoot>
 
 block content
 
@@ -266,6 +274,13 @@ block content
 
         each variant in colorVariants
           <p class="text-#{variant}">Text with text-#{variant} class</p>
+
+        <figure class="figure">
+          <svg class="flex-shrink-0 mx-auto mb-2 float-start" width="480" height="240" role="img" aria-label="Success:">
+            <use xlink:href="#sample-image"></use>
+          </svg>
+          <figcaption class="figure-caption text-center">A caption for the above image.</figcaption>
+        </figure>
 
       +tabpane("colors")
 
@@ -1287,8 +1302,6 @@ block content
 
       +tabpane("pagination")
 
-      +tabpane("popovers")
-
       +tabpane("progress")
 
         <div class="progress mb-2">
@@ -1472,13 +1485,25 @@ block content
           +table-content
         </table>
 
+        <table class="table table-primary table-sm">
+          +table-content
+        </table>
+
+        <table class="table table-info table-sm">
+          +table-content
+        </table>
+
+        <table class="table table-dark table-sm">
+          +table-content
+        </table>
+
       +tabpane("toasts")
 
         <div class="toast show mb-3" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
           <div class="toast-header">
             <strong class="me-auto">Bootstrap</strong>
             <small>11 mins ago</small>
-            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            <button type="button" class="btn-close" aria-label="Close"></button>
           </div>
           <div class="toast-body">
             | Hello, world! This is a toast message.
@@ -1498,6 +1523,8 @@ block content
           </div>
 
       +tabpane("tooltips")
+
+        <h2>Tooltips</h2>
         <p>
           | Placeholder text to demonstrate some <a href="#" data-bs-toggle="tooltip" title="" data-bs-original-title="Default tooltip">inline links</a> with tooltips. This is now just filler, no killer. Content placed here just to mimic the presence of <a href="#" data-bs-toggle="tooltip" title="" data-bs-original-title="Another tooltip">real text</a>. And all that just to give you an idea of how tooltips would look when used in real-world situations. So hopefully you've now seen how <a href="#" data-bs-toggle="tooltip" title="" data-bs-original-title="Another one here too">these tooltips on links</a> can work in practice, once you use them on <a href="#" data-bs-toggle="tooltip" title="" data-bs-original-title="The last tip!">your own</a> site or project.
         </p>
@@ -1523,14 +1550,33 @@ block content
           </button>
         </div>
 
+        <h2>Popovers</h2>
+
+        <div class="mb-3">
+          <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Top popover">
+            | Popover on top
+          </button>
+          <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Right popover">
+            | Popover on right
+          </button>
+          <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Bottom popover">
+            | Popover on bottom
+          </button>
+          <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-content="Left popover">
+            | Popover on left
+          </button>
+        </div>
+
+        <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="Dismissible popover" data-bs-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</a>
+
 
 block append bodyscript
   script.
 
-    // Initialize toasts
-    var toastElList = [].slice.call(document.querySelectorAll('.toast'))
-    var toastList = toastElList.map(function (toastEl) {
-      return new bootstrap.Toast(toastEl, option)
+    // Initialize popovers
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+      return new bootstrap.Popover(popoverTriggerEl)
     })
 
     // Initialize tooltips

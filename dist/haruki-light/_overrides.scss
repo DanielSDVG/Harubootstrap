@@ -183,3 +183,13 @@ $override-card-colors: (
 .form-range:disabled::-moz-range-track {
   background-color: tint-color($black, 90%);
 }
+
+// Tables
+// =============================================================================
+
+
+@each $variant, $colors in $override-card-colors {
+  .table.table-#{$variant} > :not(:first-child) {
+    border-top-color: currentColor;
+  }
+}

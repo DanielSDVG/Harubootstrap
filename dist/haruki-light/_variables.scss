@@ -6,11 +6,12 @@ $blue: #2d4bff;
 $indigo: #5c2ffd;
 $purple: #a02ffd;
 $pink: #ff86f9;
-$green: #12c456;
+$green: #12b14f; //#12c456;
 $yellow: #ffc000;
 $red: #ff5b5b;
 $orange: #ff9933;
 
+$black: black;
 $white: white;
 
 $primary: $cyan;
@@ -92,8 +93,25 @@ $form-file-button-hover-bg: shade-color($form-file-button-bg, 5%);
 
 $list-group-border-color: $harubootstrap-border-color;
 $list-group-hover-bg: rgba($primary, 10%);
-$list-group-action-color: $primary-color-darker;
+$list-group-active-color: $black;
+$list-group-action-active-color: $black;
+$list-group-action-active-bg: rgba($primary, 20%);
 
+
+// Tables
+// =============================================================================
+
+$popover-border-color: $harubootstrap-border-color;
+$popover-header-bg: rgba($primary, 10%);
+$popover-body-padding-y: .5rem;
+
+
+// Tables
+// =============================================================================
+
+$table-border-color: $harubootstrap-border-color;
+$table-group-separator-color: $primary;
+$table-striped-bg: rgba($primary, 10%);
 
 // Toasts
 // =============================================================================
