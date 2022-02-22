@@ -13,6 +13,15 @@ mixin tabpane(id)
     .tab-pane(id=`page-${id}`)
       block
 
+mixin dropdown-content
+  <ul class="dropdown-menu #{attributes.class}">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item disabled" href="#">Something else here</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item active" href="#">Separated link</a></li>
+  </ul>
+
 block content
 
   .row
@@ -527,14 +536,126 @@ block content
         </div>
 
         <h2>Close buttons</h2>
-        <div class="p-2 mb-3">
-          <button type="button" class="btn-close" aria-label="Close"></button>
-          <button type="button" class="btn-close" aria-label="Close" disabled></button>
+        <div class="row mb-3">
+          <div class="col">
+            <button type="button" class="btn-close" aria-label="Close"></button>
+            <button type="button" class="btn-close" aria-label="Close" disabled></button>
+          </div>
+          <div class="col bg-dark">
+            <button type="button" class="btn-close btn-close-white" aria-label="Close"></button>
+            <button type="button" class="btn-close btn-close-white" aria-label="Close" disabled></button>
+          </div>
         </div>
-        <div class="p-2 bg-dark">
-          <button type="button" class="btn-close btn-close-white" aria-label="Close"></button>
-          <button type="button" class="btn-close btn-close-white" aria-label="Close" disabled></button>
+
+        <h2>Dropdowns</h2>
+
+        <div class="mb-3">
+          <div class="btn-group">
+            <button class="btn btn-primary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              | Large button
+            </button>
+            +dropdown-content
+          </div>
+          <div class="btn-group">
+            <button class="btn btn-primary btn-lg" type="button">
+              | Large split button
+            </button>
+            <button type="button" class="btn btn-lg btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="visually-hidden">Toggle Dropdown</span>
+            </button>
+            +dropdown-content
+          </div>
         </div>
+
+        <div class="mb-3">
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              | Normal button
+            </button>
+            +dropdown-content
+          </div>
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary">Normal split button</button>
+            <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="visually-hidden">Toggle Dropdown</span>
+            </button>
+            +dropdown-content
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <div class="btn-group">
+            <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              | Small button
+            </button>
+            +dropdown-content
+          </div>
+          <div class="btn-group">
+            <button class="btn btn-primary btn-sm" type="button">
+              | Small split button
+            </button>
+            <button type="button" class="btn btn-sm btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="visually-hidden">Toggle Dropdown</span>
+            </button>
+            +dropdown-content
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <div class="btn-group dropup">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              | Dropup
+            </button>
+            +dropdown-content
+          </div>
+          <div class="btn-group dropup">
+            <button type="button" class="btn btn-secondary">
+              | Split dropup
+            </button>
+            <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="visually-hidden">Toggle Dropdown</span>
+            </button>
+            +dropdown-content
+          </div>
+          <div class="btn-group dropstart">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              | Dropleft
+            </button>
+            +dropdown-content
+          </div>
+          <div class="btn-group dropstart">
+            <button type="button" class="btn btn-secondary">
+              | Split dropleft
+            </button>
+            <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="visually-hidden">Toggle Dropdown</span>
+            </button>
+            +dropdown-content
+          </div>
+          <div class="btn-group dropend">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              | Dropright
+            </button>
+            +dropdown-content
+          </div>
+          <div class="btn-group dropend">
+            <button type="button" class="btn btn-secondary">
+              | Split dropright
+            </button>
+            <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="visually-hidden">Toggle Dropdown</span>
+            </button>
+            +dropdown-content
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            | Dark dropdown button
+          </button>
+          +dropdown-content()(class="dropdown-menu-dark")
+        </div>
+        
 
       +tabpane("card")
 
@@ -840,7 +961,190 @@ block content
 
       +tabpane("collapse")
 
-      +tabpane("dropdowns")
+      +tabpane("forms")
+
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="bs-component">
+              <form>
+                <fieldset>
+                  <legend>Legend</legend>
+                  <div class="form-group row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-10">
+                      <input type="text" readonly="" class="form-control-plaintext" id="staticEmail" value="email@example.com">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1" class="form-label mt-4">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1" class="form-label mt-4">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleSelect1" class="form-label mt-4">Example select</label>
+                    <select class="form-select" id="exampleSelect1">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleSelect2" class="form-label mt-4">Example multiple select</label>
+                    <select multiple="" class="form-select" id="exampleSelect2">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleTextarea" class="form-label mt-4">Example textarea</label>
+                    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="formFile" class="form-label mt-4">Default file input example</label>
+                    <input class="form-control" type="file" id="formFile">
+                  </div>
+                  <fieldset class="form-group">
+                    <legend class="mt-4">Radio buttons</legend>
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                        | Option one is this and that—be sure to include why it's great
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+                        | Option two can be something else and selecting it will deselect option one
+                      </label>
+                    </div>
+                    <div class="form-check disabled">
+                      <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" disabled="">
+                        | Option three is disabled
+                      </label>
+                    </div>
+                  </fieldset>
+                  <fieldset class="form-group">
+                    <legend class="mt-4">Checkboxes</legend>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="preview-check1">
+                      <label class="form-check-label" for="preview-check1">
+                        | Default checkbox
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="preview-check2" checked="">
+                      <label class="form-check-label" for="preview-check2">
+                        | Checked checkbox
+                      </label>
+                    </div>
+                  </fieldset>
+                  <fieldset>
+                    <legend class="mt-4">Switches</legend>
+                    <div class="form-check form-switch">
+                      <input class="form-check-input" type="checkbox" id="preview-switch1">
+                      <label class="form-check-label" for="preview-switch1">Default switch checkbox input</label>
+                    </div>
+                    <div class="form-check form-switch">
+                      <input class="form-check-input" type="checkbox" id="preview-switch2" checked>
+                      <label class="form-check-label" for="preview-switch2">Checked switch checkbox input</label>
+                    </div>
+                  </fieldset>
+                  <fieldset class="form-group">
+                    <legend class="mt-4">Ranges</legend>
+                      <label for="preview-range1" class="form-label">Example range</label>
+                      <input type="range" class="form-range" id="preview-range1">
+                      <label for="preview-range2" class="form-label">Disabled range</label>
+                      <input type="range" class="form-range" id="preview-range2" disabled="">
+                      <label for="preview-range3" class="form-label">Example range</label>
+                      <input type="range" class="form-range" min="0" max="5" step="0.5" id="preview-range3">
+                  </fieldset>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <form class="bs-component">
+              <div class="form-group">
+                <fieldset disabled="">
+                  <label class="form-label" for="preview-input-disabled">Disabled input</label>
+                  <input class="form-control" id="preview-input-disabled" type="text" placeholder="Disabled input here..." disabled="">
+                </fieldset>
+              </div>
+
+              <div class="form-group">
+                <fieldset>
+                  <label class="form-label mt-4" for="preview-input-readonly">Readonly input</label>
+                  <input class="form-control" id="preview-input-readonly" type="text" placeholder="Readonly input here..." readonly="">
+                </fieldset>
+              </div>
+
+              <div class="form-group has-success">
+                <label class="form-label mt-4" for="preview-input-valid">Valid input</label>
+                <input type="text" value="correct value" class="form-control is-valid" id="preview-input-valid">
+                <div class="valid-feedback">Success! You've done it.</div>
+              </div>
+
+              <div class="form-group has-danger">
+                <label class="form-label mt-4" for="preview-input-invalid">Invalid input</label>
+                <input type="text" value="wrong value" class="form-control is-invalid" id="preview-input-invalid">
+                <div class="invalid-feedback">Sorry, that username's taken. Try another?</div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-form-label col-form-label-lg mt-4" for="preview-input-large">Large input</label>
+                <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" id="preview-input-large">
+              </div>
+
+              <div class="form-group">
+                <label class="col-form-label mt-4" for="preview-input-default">Default input</label>
+                <input type="text" class="form-control" placeholder="Default input" id="preview-input-default">
+              </div>
+
+              <div class="form-group">
+                <label class="col-form-label col-form-label-sm mt-4" for="inputSmall">Small input</label>
+                <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" id="inputSmall">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label mt-4">Input addons</label>
+                <div class="form-group">
+                  <div class="input-group mb-3">
+                    <span class="input-group-text">$</span>
+                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                    <span class="input-group-text">.00</span>
+                  </div>
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button class="btn btn-primary" type="button" id="button-addon2">Button</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label mt-4">Floating labels</label>
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                  <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating">
+                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                  <label for="floatingPassword">Password</label>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
 
       +tabpane("listgroup")
 

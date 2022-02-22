@@ -9,7 +9,6 @@ tabs = {
   "card": "Cards",
   "carousel": "Carousel",
   "colors": "Colors",
-  "dropdowns": "Dropdowns",
   "forms": "Forms",
   "listgroup": "List group",
   "modal": "Modal",

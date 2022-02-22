@@ -11,6 +11,8 @@ $yellow: #ffc000;
 $red: #ff5b5b;
 $orange: #ff9933;
 
+$white: white;
+
 $primary: $cyan;
 $secondary: $pink;
 $info: $purple;
@@ -23,6 +25,12 @@ $font-family-sans-serif: "Nunito", system-ui, -apple-system, "Segoe UI", Roboto,
 $mark-padding: 0;
 $mark-bg: rgba(255, 238, 0, 0.3);
 
+$component-active-color: black;
+$component-active-bg: $primary;
+
+$hr-color: $primary;
+$hr-opacity: 0.5;
+
 // Accordion
 // =============================================================================
 
@@ -34,3 +42,41 @@ $accordion-button-active-color: shade-color($primary, 40%);
 // =============================================================================
 
 $btn-active-bg-tint-amount: 25%;
+
+
+// Card
+// =============================================================================
+
+$card-border-color: rgba($primary, 40%);
+$card-cap-bg: rgba($primary, 10%);
+
+
+// Dropdown
+// =============================================================================
+
+$dropdown-border-color: $primary;
+$dropdown-divider-bg: $dropdown-border-color;
+$dropdown-link-hover-bg: rgba($primary, 30%);
+$dropdown-link-active-bg: rgba($primary, 40%);
+
+$dropdown-dark-border-color: $blue;
+$dropdown-dark-divider-bg: $blue;
+$dropdown-dark-link-hover-bg: rgba($blue, .15);
+$dropdown-dark-link-active-color: $white;
+$dropdown-dark-link-active-bg: rgba($blue, .25);
+
+
+// Forms
+// =============================================================================
+
+$input-border-color: tint-color($primary, 40%);
+$form-check-input-checked-bg-color: tint-color($primary, 40%);
+$form-check-input-indeterminate-bg-color: tint-color($primary, 40%);
+$form-range-track-bg: tint-color($primary, 75%);
+
+$input-group-addon-color: shade-color($primary, 40%);
+$input-group-addon-bg: rgba($primary, 10%);
+
+$form-file-button-color: shade-color($primary, 40%);
+$form-file-button-bg: rgba($primary, 10%);
+$form-file-button-hover-bg: shade-color($form-file-button-bg, 5%);
