@@ -32,14 +32,14 @@ $component-active-bg: rgba($primary, 50%);
 $hr-color: $primary;
 $hr-opacity: 0.5;
 
-$harubootstrap-border-color: tint-color($primary, 40%);
+$border-color: tint-color($primary, 40%);
 $primary-color-darker: shade-color($primary, 40%);
-$box-shadow: 0 .5rem 1rem rgba($harubootstrap-border-color, 0.3);
+$box-shadow: 0 .5rem 1rem rgba($border-color, 0.3);
 
 // Accordion
 // =============================================================================
 
-$accordion-border-color: $harubootstrap-border-color;
+$accordion-border-color: $border-color;
 $accordion-button-active-color: $primary-color-darker;
 
 
@@ -52,7 +52,7 @@ $btn-active-bg-tint-amount: 25%;
 // Card
 // =============================================================================
 
-$card-border-color: $harubootstrap-border-color;
+$card-border-color: $border-color;
 $card-cap-bg: rgba($primary, 10%);
 
 
@@ -74,7 +74,7 @@ $dropdown-dark-link-active-bg: rgba($blue, .25);
 // Forms
 // =============================================================================
 
-$input-border-color: $harubootstrap-border-color;
+$input-border-color: $border-color;
 $form-check-input-checked-bg-color: tint-color($primary, 40%);
 $form-check-input-indeterminate-bg-color: tint-color($primary, 40%);
 $form-range-track-bg: tint-color($primary, 75%);
@@ -91,17 +91,21 @@ $form-file-button-hover-bg: shade-color($form-file-button-bg, 5%);
 // List groups
 // =============================================================================
 
-$list-group-border-color: $harubootstrap-border-color;
+$list-group-border-color: $border-color;
 $list-group-hover-bg: rgba($primary, 10%);
 $list-group-active-color: $black;
 $list-group-action-active-color: $black;
 $list-group-action-active-bg: rgba($primary, 20%);
 
+// Modals
+// =============================================================================
+$modal-content-border-color: $border-color;
+
 
 // Tables
 // =============================================================================
 
-$popover-border-color: $harubootstrap-border-color;
+$popover-border-color: $border-color;
 $popover-header-bg: rgba($primary, 10%);
 $popover-body-padding-y: .5rem;
 
@@ -109,12 +113,12 @@ $popover-body-padding-y: .5rem;
 // Tables
 // =============================================================================
 
-$table-border-color: $harubootstrap-border-color;
+$table-border-color: $border-color;
 $table-group-separator-color: $primary;
 $table-striped-bg: rgba($primary, 10%);
 
 // Toasts
 // =============================================================================
 
-$toast-border-color: $harubootstrap-border-color;
-$toast-header-border-color: $harubootstrap-border-color;
+$toast-border-color: $border-color;
+$toast-header-border-color: $border-color;
