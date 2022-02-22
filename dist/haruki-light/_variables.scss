@@ -33,6 +33,7 @@ $hr-opacity: 0.5;
 
 $harubootstrap-border-color: tint-color($primary, 40%);
 $primary-color-darker: shade-color($primary, 40%);
+$box-shadow: 0 .5rem 1rem rgba($harubootstrap-border-color, 0.3);
 
 // Accordion
 // =============================================================================
@@ -92,3 +93,10 @@ $form-file-button-hover-bg: shade-color($form-file-button-bg, 5%);
 $list-group-border-color: $harubootstrap-border-color;
 $list-group-hover-bg: rgba($primary, 10%);
 $list-group-action-color: $primary-color-darker;
+
+
+// Toasts
+// =============================================================================
+
+$toast-border-color: $harubootstrap-border-color;
+$toast-header-border-color: $harubootstrap-border-color;
