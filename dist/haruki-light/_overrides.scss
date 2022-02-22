@@ -93,7 +93,12 @@ $override-card-colors: (
   .card.bg-#{$variant} {
 
     border-color: $color1 !important;
-    background-color: $color2 !important;
+    background-color: $color3 !important;
+
+    .card-header,
+    .card-footer {
+      background-color: $color2 !important;
+    }
 
     .card-header,
     .card-footer,
@@ -103,7 +108,7 @@ $override-card-colors: (
     }
 
     .list-group-item {
-      background-color: $color2 !important;
+      background-color: $color3 !important;
     }
 
 
@@ -115,8 +120,8 @@ $override-card-colors: (
         }
         .nav-link.active,
         .nav-item.show .nav-link {
-          border-color: $color1 $color1 $color2 $color1;
-          background-color: $color2 !important;
+          border-color: $color1 $color1 $color3 $color1;
+          background-color: $color3 !important;
         }
       }
     }

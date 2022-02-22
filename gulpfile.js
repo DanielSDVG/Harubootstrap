@@ -21,8 +21,8 @@ function buildOneTheme(name) {
         outputStyle: "compressed"
       }).on("error", sass.logError)
     )
-    .pipe(gulp.dest(`.${config.folders.themesPublic}`))
-    .pipe(gulp.dest(`.${config.folders.themesSrc}`));
+    .pipe(gulp.dest(`.${config.folders.themesPublic}/${name}`))
+    .pipe(gulp.dest(`.${config.folders.themesSrc}/${name}`));
 }
 
 exports.default = () => buildOneTheme("haruki-light");
