@@ -28,7 +28,7 @@ $mark-padding: 0;
 $mark-bg: rgba(255, 238, 0, 0.3);
 
 $component-active-color: black;
-$component-active-bg: rgba($primary, 50%);
+$component-active-bg: tint-color($primary, 50%);
 
 $hr-color: $primary;
 $hr-opacity: 0.5;
@@ -102,6 +102,18 @@ $list-group-action-active-bg: rgba($primary, 20%);
 // Modals
 // =============================================================================
 $modal-content-border-color: $border-color;
+
+
+// Pagination
+// =============================================================================
+
+$pagination-border-color: $border-color;
+$pagination-hover-bg: tint-color($primary, 75%);
+$pagination-hover-border-color: $border-color;
+$pagination-focus-bg: $pagination-hover-bg;
+$pagination-active-bg: $component-active-bg;
+$pagination-disabled-bg: $white;
+$pagination-disabled-border-color: $border-color;
 
 
 // Navs & Tabs
