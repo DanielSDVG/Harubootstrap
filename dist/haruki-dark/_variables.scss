@@ -1,15 +1,16 @@
 @import "../../node_modules/bootstrap/scss/functions";
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+
 $cyan: #39c7ff;
 $blue: #2d4bff;
 $indigo: #5c2ffd;
-$purple: #a02ffd;
-$pink: #ff86f9;
-$green: #12b14f; // #12c456?
-$yellow: #ffc000;
-$red: #ff5b5b;
-$orange: #ff9933;
+$purple: #b71bff;
+$pink: #f016e5;
+$green: #00a53f;
+$yellow: #e9c600;
+$red: #eb0000;
+$orange: #ff850a;
 
 $white: #fff;
 $gray-100: #f8f9fa;
@@ -23,16 +24,16 @@ $gray-800: #343a40;
 $gray-900: #212529;
 $black: #000;
 
-$primary: $cyan;
+$primary: $blue;
 $secondary: $pink;
 $info: $purple;
 
-$primary-dark: $blue;
+$primary-dark: $cyan;
 
-$body-bg: $white;
-$body-color: $gray-900;
+$body-bg: #0e0e0e;
+$body-color: $gray-100;
 $code-color: $red;
-$link-color: $blue;
+$link-color: $cyan;
 
 $font-family-sans-serif: "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
@@ -45,10 +46,10 @@ $component-active-bg: tint-color($primary, 50%);
 $hr-color: $primary;
 $hr-opacity: 0.5;
 
-$border-color: tint-color($primary, 40%);
+$border-color: shade-color($primary, 40%);
 $primary-color-darker: shade-color($primary, 40%);
-$primary-color-tinted: tint-color($primary, 80%);
-$primary-color-more-tinted: tint-color($primary, 90%);
+$primary-color-tinted: shade-color($primary, 90%);
+$primary-color-more-tinted: shade-color($primary, 80%);
 $box-shadow: 0 .5rem 1rem rgba($border-color, 0.3);
 
 

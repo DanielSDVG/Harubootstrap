@@ -25,4 +25,5 @@ function buildOneTheme(name) {
     .pipe(gulp.dest(`.${config.folders.themesSrc}/${name}`));
 }
 
-exports.default = () => buildOneTheme("haruki-light");
+exports.harukiLight = () => buildOneTheme("haruki-light");
+exports.harukiDark = () => buildOneTheme("haruki-dark");
