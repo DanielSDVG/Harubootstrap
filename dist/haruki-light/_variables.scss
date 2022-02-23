@@ -35,6 +35,7 @@ $hr-opacity: 0.5;
 
 $border-color: tint-color($primary, 40%);
 $primary-color-darker: shade-color($primary, 40%);
+$primary-color-tinted: tint-color($primary, 80%);
 $box-shadow: 0 .5rem 1rem rgba($border-color, 0.3);
 
 // Accordion
@@ -78,7 +79,7 @@ $dropdown-dark-link-active-bg: rgba($blue, .25);
 $input-border-color: $border-color;
 $form-check-input-checked-bg-color: tint-color($primary, 40%);
 $form-check-input-indeterminate-bg-color: tint-color($primary, 40%);
-$form-range-track-bg: tint-color($primary, 75%);
+$form-range-track-bg: $primary-color-tinted;
 $form-range-thumb-bg: $primary;
 
 $input-group-addon-color: shade-color($primary, 40%);

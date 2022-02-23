@@ -184,6 +184,10 @@ $override-card-colors: (
   background-color: tint-color($black, 90%);
 }
 
+.navbar.bg-light {
+  background-color: $primary-color-tinted !important;
+}
+
 // Tables
 // =============================================================================
 

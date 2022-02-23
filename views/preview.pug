@@ -59,6 +59,42 @@ mixin table-content
     </tr>
   </tfoot>
 
+mixin navbar-content(variant)
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#preview-navbar-supported-content-#{i}" aria-controls="preview-navbar-supported-content-#{i}" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="preview-navbar-supported-content">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="preview-navbar-dropdown-#{i}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="preview-navbar-dropdown-#{i}">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn #{outlineButtonInBG(variant)}" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+
 block content
 
   -
@@ -88,6 +124,20 @@ block content
         return "text-dark";
       } else {
         return "";
+      }
+    }
+    function navbarScheme(variant) {
+      if (theme.whiteTextVariants.includes(variant) ) {
+        return "navbar-dark";
+      } else {
+        return "navbar-light";
+      }
+    }
+    function outlineButtonInBG(variant) {
+      if (theme.whiteTextVariants.includes(variant) ) {
+        return "btn-outline-light";
+      } else {
+        return "btn-outline-dark";
       }
     }
 
@@ -1405,6 +1455,25 @@ block content
         </ul>
 
       +tabpane("navbar")
+
+        each variant in colorVariants
+          <nav class="navbar navbar-expand-lg #{navbarScheme(variant)} bg-#{variant} mb-3">
+            +navbar-content(variant)
+          </nav>
+
+        <div class="collapse" id="preview-navbar-external">
+          <div class="bg-dark p-4">
+            <h5 class="text-white h4">Collapsed content</h5>
+            <span class="text-muted">Toggleable via the navbar brand.</span>
+          </div>
+        </div>
+        <nav class="navbar navbar-dark bg-dark">
+          <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#preview-navbar-external" aria-controls="preview-navbar-external" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+        </nav>
 
       +tabpane("offcanvas")
 
