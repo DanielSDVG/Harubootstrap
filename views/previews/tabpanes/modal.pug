@@ -1,0 +1,47 @@
++tabpane("modal")
+
+  <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#preview-modal" aria-controls="preview-modal">
+    | Launch demo modal
+  </button>
+  <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="offcanvas" data-bs-target="#preview-offcanvas" aria-controls="preview-offcanvas">
+    | Launch offcanvas
+  </button>
+
+  <div class="modal fade" id="preview-modal" tabindex="-1" aria-labelledby="preview-modal-label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="preview-modal-label">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">Woohoo, you're reading this text in a modal!</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="preview-offcanvas" aria-labelledby="preview-offcanvas-label">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="preview-offcanvas-label">Offcanvas</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div>
+        | Some text as placeholder. In real life you can have the elements you have chosen.
+        | Like, text, images, lists, etc.
+      </div>
+      <div class="dropdown mt-3">
+        <button class="btn btn-info dropdown-toggle" type="button" id="preview-offcanvas-dropdown" data-bs-toggle="dropdown">
+          | Dropdown button
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="preview-offcanvas-dropdown">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>

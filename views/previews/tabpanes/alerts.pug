@@ -1,0 +1,53 @@
++tabpane("alerts")
+
+  <h2>Alerts</h2>
+  each variant in colorVariants
+    <div class="alert alert-#{variant}" role="alert">
+      | A simple #{variant} alert with <a class="alert-link" href="#">an example link</a>. Give it a click if you like.
+    </div>
+
+  <h2>Alerts with icons</h2>
+  <div class="alert alert-success" role="alert">
+    <svg class="flex-shrink-0 me-2 mb-2 float-start" width="24" height="24" role="img" aria-label="Success:">
+      <use xlink:href="#check-circle-fill"></use>
+    </svg>
+    <h4 class="alert-heading">Well done!</h4>
+    <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+    <hr />
+    <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+  </div>
+  
+  <div class="alert alert-primary d-flex align-items-center" role="alert">
+    <svg class="flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
+      <use xlink:href="#info-fill"></use>
+    </svg>
+    <div>An example alert with an icon</div>
+  </div>
+
+  <div class="alert alert-success d-flex align-items-center" role="alert">
+    <svg class="flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
+      <use xlink:href="#check-circle-fill"></use>
+    </svg>
+    <div>An example success alert with an icon</div>
+  </div>
+
+  <div class="alert alert-warning d-flex align-items-center" role="alert">
+    <svg class="flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:">
+      <use xlink:href="#exclamation-triangle-fill"></use>
+    </svg>
+    <div>An example warning alert with an icon</div>
+  </div>
+
+  <div class="alert alert-danger d-flex align-items-center" role="alert">
+    <svg class="flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
+      <use xlink:href="#exclamation-triangle-fill"></use>
+    </svg>
+    <div>An example danger alert with an icon</div>
+  </div>
+
+  <h2>Dismissible alert</h2>
+
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+    <button class="btn-close" type="button" aria-label="Close"></button>
+  </div>

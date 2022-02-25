@@ -1,0 +1,43 @@
+-
+  function whiteTextOnCard(variant) {
+    if (theme.applyWhiteTextOnCards && theme.whiteTextVariants.includes(variant) ) {
+      return "text-white";
+    } else {
+      return "";
+    }
+  }
+  function whiteText(variant) {
+    if (theme.whiteTextVariants.includes(variant) ) {
+      return "text-white";
+    } else {
+      return "";
+    }
+  }
+  function whiteCloseButton(variant) {
+    if (theme.whiteTextVariants.includes(variant) ) {
+      return "btn-close-white";
+    } else {
+      return "";
+    }
+  }
+  function darkText(variant) {
+    if (!theme.whiteTextVariants.includes(variant) ) {
+      return "text-dark";
+    } else {
+      return "";
+    }
+  }
+  function navbarScheme(variant) {
+    if (theme.whiteTextVariants.includes(variant) ) {
+      return "navbar-dark";
+    } else {
+      return "navbar-light";
+    }
+  }
+  function outlineButtonInBG(variant) {
+    if (theme.whiteTextVariants.includes(variant) ) {
+      return "btn-outline-light";
+    } else {
+      return "btn-outline-dark";
+    }
+  }

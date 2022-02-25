@@ -1,0 +1,277 @@
++tabpane("forms")
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="bs-component">
+        <form>
+          <fieldset>
+            <legend>Legend</legend>
+            <div class="form-group row">
+              <label for="preview-static-email" class="col-sm-2 col-form-label">Email</label>
+              <div class="col-sm-10">
+                <input type="text" readonly="" class="form-control-plaintext" id="preview-static-email" value="email@example.com">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="preview-input-email-1" class="form-label mt-4">Email address</label>
+              <input type="email" class="form-control" id="preview-input-email-1" aria-describedby="emailHelp" placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="preview-input-password-1" class="form-label mt-4">Password</label>
+              <input type="password" class="form-control" id="preview-input-password-1" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <label for="preview-select1" class="form-label mt-4">Example select</label>
+              <select class="form-select" id="preview-select1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="preview-select2" class="form-label mt-4">Example multiple select</label>
+              <select multiple="" class="form-select" id="preview-select2">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="preview-textarea" class="form-label mt-4">Example textarea</label>
+              <textarea class="form-control" id="preview-textarea" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="preview-formfile" class="form-label mt-4">Default file input example</label>
+              <input class="form-control" type="file" id="preview-formfile">
+            </div>
+            <fieldset class="form-group">
+              <legend class="mt-4">Radio buttons</legend>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="preview-options-radio" id="preview-options-radio1" value="option1" checked="">
+                  | Option one is this and that—be sure to include why it's great
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="preview-options-radio" id="preview-options-radio2" value="option2">
+                  | Option two can be something else and selecting it will deselect option one
+                </label>
+              </div>
+              <div class="form-check disabled">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="preview-options-radio" id="preview-options-radio3" value="option3" disabled="">
+                  | Option three is disabled
+                </label>
+              </div>
+            </fieldset>
+            <fieldset class="form-group">
+              <legend class="mt-4">Checkboxes</legend>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="preview-check1">
+                <label class="form-check-label" for="preview-check1">
+                  | Default checkbox
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="preview-check2" checked="">
+                <label class="form-check-label" for="preview-check2">
+                  | Checked checkbox
+                </label>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend class="mt-4">Switches</legend>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="preview-switch1">
+                <label class="form-check-label" for="preview-switch1">Default switch checkbox input</label>
+              </div>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="preview-switch2" checked>
+                <label class="form-check-label" for="preview-switch2">Checked switch checkbox input</label>
+              </div>
+            </fieldset>
+            <fieldset class="form-group">
+              <legend class="mt-4">Ranges</legend>
+                <label for="preview-range1" class="form-label">Example range</label>
+                <input type="range" class="form-range" id="preview-range1">
+                <label for="preview-range2" class="form-label">Disabled range</label>
+                <input type="range" class="form-range" id="preview-range2" disabled="">
+                <label for="preview-range3" class="form-label">Example range</label>
+                <input type="range" class="form-range" min="0" max="5" step="0.5" id="preview-range3">
+            </fieldset>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <form class="bs-component">
+        <div class="form-group">
+          <fieldset disabled="">
+            <label class="form-label" for="preview-input-disabled">Disabled input</label>
+            <input class="form-control" id="preview-input-disabled" type="text" placeholder="Disabled input here..." disabled="">
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <fieldset>
+            <label class="form-label mt-4" for="preview-input-readonly">Readonly input</label>
+            <input class="form-control" id="preview-input-readonly" type="text" placeholder="Readonly input here..." readonly="">
+          </fieldset>
+        </div>
+
+        <div class="form-group has-success">
+          <label class="form-label mt-4" for="preview-input-valid">Valid input</label>
+          <input type="text" value="correct value" class="form-control is-valid" id="preview-input-valid">
+          <div class="valid-feedback">Success! You've done it.</div>
+        </div>
+
+        <div class="form-group has-danger">
+          <label class="form-label mt-4" for="preview-input-invalid">Invalid input</label>
+          <input type="text" value="wrong value" class="form-control is-invalid" id="preview-input-invalid">
+          <div class="invalid-feedback">Sorry, that username's taken. Try another?</div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-form-label col-form-label-lg mt-4" for="preview-input-large">Large input</label>
+          <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" id="preview-input-large">
+        </div>
+
+        <div class="form-group">
+          <label class="col-form-label mt-4" for="preview-input-default">Default input</label>
+          <input type="text" class="form-control" placeholder="Default input" id="preview-input-default">
+        </div>
+
+        <div class="form-group">
+          <label class="col-form-label col-form-label-sm mt-4" for="inputSmall">Small input</label>
+          <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" id="inputSmall">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label mt-4">Input addons</label>
+          <div class="form-group">
+            <div class="input-group mb-3">
+              <span class="input-group-text">$</span>
+              <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+              <span class="input-group-text">.00</span>
+            </div>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+              <button class="btn btn-primary" type="button" id="button-addon2">Button</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label mt-4">Floating labels</label>
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="preview-floating-input" placeholder="name@example.com">
+            <label for="preview-floating-input">Email address</label>
+          </div>
+          <div class="form-floating">
+            <input type="password" class="form-control" id="preview-floating-password" placeholder="Password">
+            <label for="preview-floating-password">Password</label>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
++tabpane("listgroup")
+
+  <ul class="list-group mb-3">
+    <li class="list-group-item">An item</li>
+    <li class="list-group-item">A second item</li>
+    <li class="list-group-item">A third item</li>
+    <li class="list-group-item">A fourth item</li>
+    <li class="list-group-item">And a fifth one</li>
+  </ul>
+
+  <ul class="list-group mb-3">
+    <li class="list-group-item active" aria-current="true">An active item</li>
+    <li class="list-group-item disabled">A disabled item</li>
+    <li class="list-group-item">A third item</li>
+    <li class="list-group-item">A fourth item</li>
+    <li class="list-group-item">And a fifth one</li>
+  </ul>
+
+  <ul class="list-group list-group-flush mb-3">
+    <li class="list-group-item">An item</li>
+    <li class="list-group-item">A second item</li>
+    <li class="list-group-item">A third item</li>
+    <li class="list-group-item">A fourth item</li>
+    <li class="list-group-item">And a fifth one</li>
+  </ul>
+
+  <ul class="list-group list-group-horizontal mb-3">
+    <li class="list-group-item">An item</li>
+    <li class="list-group-item">A second item</li>
+    <li class="list-group-item">A third item</li>
+  </ul>
+
+  <ul class="list-group mb-3">
+    <li class="list-group-item">A simple default list group item</li>
+    <li class="list-group-item list-group-item-primary">A simple primary list group item</li>
+    <li class="list-group-item list-group-item-secondary">A simple secondary list group item</li>
+    <li class="list-group-item list-group-item-success">A simple success list group item</li>
+    <li class="list-group-item list-group-item-danger">A simple danger list group item</li>
+    <li class="list-group-item list-group-item-warning">A simple warning list group item</li>
+    <li class="list-group-item list-group-item-info">A simple info list group item</li>
+    <li class="list-group-item list-group-item-light">A simple light list group item</li>
+    <li class="list-group-item list-group-item-dark">A simple dark list group item</li>
+  </ul>
+
+  <div class="list-group mb-3">
+    <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">List group item heading</h5>
+        <small>3 days ago</small>
+      </div>
+      <p class="mb-1">Some placeholder content in a paragraph.</p>
+      <small>And some small print.</small>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">List group item heading</h5>
+        <small class="text-muted">3 days ago</small>
+      </div>
+      <p class="mb-1">Some placeholder content in a paragraph.</p>
+      <small class="text-muted">And some muted small print.</small>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">List group item heading</h5>
+        <small class="text-muted">3 days ago</small>
+      </div>
+      <p class="mb-1">Some placeholder content in a paragraph.</p>
+      <small class="text-muted">And some muted small print.</small>
+    </a>
+  </div>
+
+  <ul class="list-group">
+    <li class="list-group-item">
+      <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+      | First checkbox
+    </li>
+    <li class="list-group-item">
+      <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+      | Second checkbox
+    </li>
+    <li class="list-group-item">
+      <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+      | Third checkbox
+    </li>
+    <li class="list-group-item">
+      <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+      | Fourth checkbox
+    </li>
+    <li class="list-group-item">
+      <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+      | Fifth checkbox
+    </li>
+  </ul>

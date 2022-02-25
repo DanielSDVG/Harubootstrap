@@ -1,0 +1,226 @@
++tabpane("buttons")
+  <h2>Buttons</h2>
+
+  <div class="mb-3">
+    each color in colorVariants
+      <button type="button" class="btn btn-#{color}">#{color}</button>&nbsp;
+    <button type="button" class="btn btn-link">Link</button>
+  </div>
+  <div class="mb-3">
+    each color in colorVariants
+      <button type="button" class="btn btn-#{color}" disabled>#{color}</button>&nbsp;
+    <button type="button" class="btn btn-link">Link</button>
+  </div>
+  <div class="mb-3">
+    each color in colorVariants
+      <button type="button" class="btn btn-outline-#{color}">#{color}</button>&nbsp;
+    <button type="button" class="btn btn-link">Link</button>
+  </div>
+  <div class="mb-3">
+    <button type="button" class="btn btn-primary btn-lg">Large button</button>
+    <button type="button" class="btn btn-secondary btn-lg">Large button</button>
+    <button type="button" class="btn btn-primary btn-sm">Small button</button>
+    <button type="button" class="btn btn-secondary btn-sm">Small button</button>
+  </div>
+
+  <div class="d-grid gap-2 mb-3">
+    <button class="btn btn-success" type="button">Block button 1</button>
+    <button class="btn btn-danger" type="button">Block button 2</button>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col d-grid">
+      <button class="btn btn-warning" type="button">Block button 3</button>
+    </div>
+    <div class="col d-grid">
+      <button class="btn btn-info" type="button">Block button 4</button>
+    </div>
+  </div>
+
+  <h2>Toggle states</h2>
+
+  each color in colorVariants
+    <div class="mb-3">
+      <button type="button" class="btn btn-#{color}" data-bs-toggle="button" autocomplete="off">Toggle button</button>
+      <button type="button" class="btn btn-#{color} active" data-bs-toggle="button" autocomplete="off" aria-pressed="true">Active toggle button</button>
+      <button type="button" class="btn btn-outline-#{color}" data-bs-toggle="button" autocomplete="off" aria-pressed="true">Outlined toggle button</button>
+      <button type="button" class="btn btn-#{color}" disabled data-bs-toggle="button" autocomplete="off">Disabled toggle button</button>
+    </div>
+
+  <div class="mb-3">
+    <a href="#" class="btn btn-primary" role="button" data-bs-toggle="button">Toggle link</a>
+    <a href="#" class="btn btn-primary active" role="button" data-bs-toggle="button" aria-pressed="true">Active toggle link</a>
+    <a class="btn btn-primary disabled" aria-disabled="true" role="button" data-bs-toggle="button">Disabled toggle link</a>
+  </div>
+
+  <h2>Button groups</h2>
+
+  <div class="mb-3">
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-primary">Left</button>
+      <button type="button" class="btn btn-primary">Middle</button>
+      <button type="button" class="btn btn-primary">Right</button>
+    </div>
+    <div class="btn-group">
+      <a href="#" class="btn btn-primary active" aria-current="page">Active link</a>
+      <a href="#" class="btn btn-primary">Link</a>
+      <a href="#" class="btn btn-primary">Link</a>
+    </div>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-danger">Left</button>
+      <button type="button" class="btn btn-warning">Middle</button>
+      <button type="button" class="btn btn-success">Right</button>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-outline-primary">Left</button>
+      <button type="button" class="btn btn-outline-primary">Middle</button>
+      <button type="button" class="btn btn-outline-primary">Right</button>
+    </div>
+
+    <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+      <input type="checkbox" class="btn-check" id="preview-btncheck1" autocomplete="off">
+      <label class="btn btn-outline-primary" for="preview-btncheck1">Checkbox 1</label>
+
+      <input type="checkbox" class="btn-check" id="preview-btncheck2" autocomplete="off">
+      <label class="btn btn-outline-primary" for="preview-btncheck2">Checkbox 2</label>
+
+      <input type="checkbox" class="btn-check" id="preview-btncheck3" autocomplete="off">
+      <label class="btn btn-outline-primary" for="preview-btncheck3">Checkbox 3</label>
+    </div>
+
+    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+      <input type="radio" class="btn-check" name="btnradio" id="preview-btnradio1" autocomplete="off" checked>
+      <label class="btn btn-outline-primary" for="preview-btnradio1">Radio 1</label>
+
+      <input type="radio" class="btn-check" name="btnradio" id="preview-btnradio2" autocomplete="off">
+      <label class="btn btn-outline-primary" for="preview-btnradio2">Radio 2</label>
+
+      <input type="radio" class="btn-check" name="btnradio" id="preview-btnradio3" autocomplete="off">
+      <label class="btn btn-outline-primary" for="preview-btnradio3">Radio 3</label>
+    </div>
+
+  </div>
+
+  <h2>Close buttons</h2>
+  <div class="row mb-3">
+    <div class="col">
+      <button type="button" class="btn-close" aria-label="Close"></button>
+      <button type="button" class="btn-close" aria-label="Close" disabled></button>
+    </div>
+    <div class="col bg-dark">
+      <button type="button" class="btn-close btn-close-white" aria-label="Close"></button>
+      <button type="button" class="btn-close btn-close-white" aria-label="Close" disabled></button>
+    </div>
+  </div>
+
+  <h2>Dropdowns</h2>
+
+  <div class="mb-3">
+    <div class="btn-group">
+      <button class="btn btn-primary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        | Large button
+      </button>
+      +dropdown-content
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-primary btn-lg" type="button">
+        | Large split button
+      </button>
+      <button type="button" class="btn btn-lg btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="visually-hidden">Toggle Dropdown</span>
+      </button>
+      +dropdown-content
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        | Normal button
+      </button>
+      +dropdown-content
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary">Normal split button</button>
+      <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="visually-hidden">Toggle Dropdown</span>
+      </button>
+      +dropdown-content
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="btn-group">
+      <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        | Small button
+      </button>
+      +dropdown-content
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-primary btn-sm" type="button">
+        | Small split button
+      </button>
+      <button type="button" class="btn btn-sm btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="visually-hidden">Toggle Dropdown</span>
+      </button>
+      +dropdown-content
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="btn-group dropup">
+      <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        | Dropup
+      </button>
+      +dropdown-content
+    </div>
+    <div class="btn-group dropup">
+      <button type="button" class="btn btn-secondary">
+        | Split dropup
+      </button>
+      <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="visually-hidden">Toggle Dropdown</span>
+      </button>
+      +dropdown-content
+    </div>
+    <div class="btn-group dropstart">
+      <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        | Dropleft
+      </button>
+      +dropdown-content
+    </div>
+    <div class="btn-group dropstart">
+      <button type="button" class="btn btn-secondary">
+        | Split dropleft
+      </button>
+      <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="visually-hidden">Toggle Dropdown</span>
+      </button>
+      +dropdown-content
+    </div>
+    <div class="btn-group dropend">
+      <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        | Dropright
+      </button>
+      +dropdown-content
+    </div>
+    <div class="btn-group dropend">
+      <button type="button" class="btn btn-secondary">
+        | Split dropright
+      </button>
+      <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="visually-hidden">Toggle Dropdown</span>
+      </button>
+      +dropdown-content
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      | Dark dropdown button
+    </button>
+    +dropdown-content()(class="dropdown-menu-dark")
+  </div>
