@@ -32,7 +32,7 @@ mark, .mark {
 // =============================================================================
 
 .alert hr {
-  color: $black;
+  color: currentColor;
   opacity: 0.25;
 }
 
@@ -42,14 +42,14 @@ mark, .mark {
 
 $button-color-overrides: (
   // Background color, text color, text color when active
-  "primary": ( $primary, $black ),
-  "secondary": ( $secondary, $black ),
-  "success": ( $success, $white ),
-  "danger": ( $danger, $white ),
-  "warning": ( $warning, $black ),
-  "info": ( $info, $white ),
-  "light": ( $light, $black),
-  "dark": ( $dark, $white )
+  "primary":    ( $primary,   $black ),
+  "secondary":  ( $secondary, $black ),
+  "success":    ( $success,   $white ),
+  "danger":     ( $danger,    $white ),
+  "warning":    ( $warning,   $black ),
+  "info":       ( $info,      $white ),
+  "light":      ( $light,     $black ),
+  "dark":       ( $dark,      $white )
 );
 
 @each $color, $value in $button-color-overrides {
@@ -124,7 +124,7 @@ $override-card-colors: (
       background-color: $color3 !important;
     }
 
-
+    /*
     .card-header,
     .card-footer {
       > .nav-tabs {
@@ -138,6 +138,7 @@ $override-card-colors: (
         }
       }
     }
+    */
 
   }
 
@@ -154,6 +155,7 @@ $override-card-colors: (
       border-color: $color1 !important;
     }
 
+    /*
     .card-header,
     .card-footer {
       > .nav-tabs {
@@ -168,6 +170,7 @@ $override-card-colors: (
         }
       }
     }
+    */
 
   }
 
@@ -189,7 +192,7 @@ $override-card-colors: (
 }
 
 .navbar.bg-light {
-  background-color: $primary-color-tinted !important;
+  background-color: $primary-150 !important;
 }
 
 // Tables
