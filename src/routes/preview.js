@@ -25,16 +25,21 @@ themes = {
   "haruki-light": {
     name: "Haruki Light",
     whiteTextVariants: ["success", "danger", "info", "dark"],
+    darkTheme: false,
     applyWhiteTextOnCards: false
   },
+  /*
   "haruki-dark": {
     name: "Haruki Dark",
     whiteTextVariants: ["primary", "success", "danger", "info", "dark"],
+    darkTheme: true,
     applyWhiteTextOnCards: false
   },
+  */
   "default": {
     name: "Bootstrap Default",
     whiteTextVariants: ["primary", "secondary", "success", "danger", "dark"],
+    darkTheme: false,
     applyWhiteTextOnCards: true
   }
 }

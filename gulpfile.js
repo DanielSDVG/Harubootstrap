@@ -1,29 +1,36 @@
 const gulp = require("gulp");
 const sass = require("gulp-sass")(require("sass"));
+const rename = require("gulp-rename");
 
 const config = require("./config.json");
 
-function buildAllThemes() {
-  return gulp.src(`.${config.folders.themesSrc}/**/[!_]*.scss`)
-    .pipe(
-      sass({
-        outputStyle: "compressed"
-      }).on("error", sass.logError)
-    )
-    .pipe(gulp.dest(`.${config.folders.themesPublic}`))
-    .pipe(gulp.dest(`.${config.folders.themesSrc}`));
+function getGulpSass(isMinified) {
+  return sass({
+    outputStyle: isMinified ? "compressed" : "expanded"
+  }).on("error", sass.logError);
 }
 
-function buildOneTheme(name) {
-  return gulp.src(`.${config.folders.themesSrc}/${name}/[!_]*.scss`)
-    .pipe(
-      sass({
-        outputStyle: "compressed"
-      }).on("error", sass.logError)
-    )
-    .pipe(gulp.dest(`.${config.folders.themesPublic}/${name}`))
-    .pipe(gulp.dest(`.${config.folders.themesSrc}/${name}`));
+function buildFile(themeName, file, isMinified) {
+  return gulp.src(`.${config.folders.themesSrc}/${themeName}/${file}.scss`)
+    .pipe(getGulpSass(isMinified))
+    .pipe(rename(isMinified ? `${file}.min.css` : `${file}.css`))
+    .pipe(gulp.dest(`.${config.folders.themesPublic}/${themeName}`))
+    .pipe(gulp.dest(`.${config.folders.themesSrc}/${themeName}`));
 }
 
-exports.harukiLight = () => buildOneTheme("haruki-light");
-exports.harukiDark = () => buildOneTheme("haruki-dark");
+function buildThemeTask(name) {
+  return gulp.parallel(
+    function buildThemeMinified() {
+      return buildFile(name, "bootstrap", true)
+    },
+    function buildTheme() {
+      return buildFile(name, "bootstrap", false)
+    },
+    function buildColorPreview() {
+      return buildFile(name, "colorpreview", true)
+    }
+  );
+}
+
+exports.default = buildThemeTask("default");
+exports.harukiLight = buildThemeTask("haruki-light");
