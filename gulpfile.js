@@ -34,3 +34,4 @@ function buildThemeTask(name) {
 
 exports.default = buildThemeTask("default");
 exports.harukiLight = buildThemeTask("haruki-light");
+exports.harukiDark = buildThemeTask("haruki-dark");

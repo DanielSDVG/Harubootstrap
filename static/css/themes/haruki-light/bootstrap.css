@@ -2204,7 +2204,7 @@ progress {
 .form-control:focus {
   color: #212529;
   background-color: #fff;
-  border-color: #cef1ff;
+  border-color: #a0e4ff;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(156, 227, 255, 0.25);
 }
@@ -2366,7 +2366,7 @@ textarea.form-control-lg {
   }
 }
 .form-select:focus {
-  border-color: #cef1ff;
+  border-color: #a0e4ff;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(156, 227, 255, 0.25);
 }
@@ -2432,7 +2432,7 @@ textarea.form-control-lg {
   filter: brightness(90%);
 }
 .form-check-input:focus {
-  border-color: #cef1ff;
+  border-color: #a0e4ff;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(156, 227, 255, 0.25);
 }
@@ -2477,7 +2477,7 @@ textarea.form-control-lg {
   }
 }
 .form-switch .form-check-input:focus {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23cef1ff'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23a0e4ff'/%3e%3c/svg%3e");
 }
 .form-switch .form-check-input:checked {
   background-position: right center;
@@ -4613,7 +4613,7 @@ textarea.form-control-lg {
 }
 .accordion-button:focus {
   z-index: 3;
-  border-color: #cef1ff;
+  border-color: #a0e4ff;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(156, 227, 255, 0.25);
 }

@@ -1,4 +1,7 @@
 -
+  function xor(a, b) {
+    return a || b && !(a && b);
+  }
   function whiteTextOnCard(variant) {
     if (theme.applyWhiteTextOnCards && theme.whiteTextVariants.includes(variant) ) {
       return "text-white";
@@ -14,7 +17,7 @@
     }
   }
   function whiteCloseButton(variant) {
-    if (theme.whiteTextVariants.includes(variant) ) {
+    if (xor(theme.whiteTextVariants.includes(variant), theme.darkMode)) {
       return "btn-close-white";
     } else {
       return "";
@@ -28,7 +31,7 @@
     }
   }
   function navbarScheme(variant) {
-    if (theme.whiteTextVariants.includes(variant) ) {
+    if (xor(theme.whiteTextVariants.includes(variant), theme.darkMode)) {
       return "navbar-dark";
     } else {
       return "navbar-light";

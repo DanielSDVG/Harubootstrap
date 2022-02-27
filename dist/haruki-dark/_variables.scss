@@ -3,15 +3,15 @@
 // Base colors
 // =============================================================================
 
-$cyan:        #39c7ff;
+$cyan:        #00b7ff;
 $blue:        #2d4bff;
 $indigo:      #5c2ffd;
-$purple:      #a02ffd;
-$pink:        #ff86f9;
-$green:       #12b14f; // #12c456?
-$yellow:      #ffc000;
-$red:         #ff5b5b;
-$orange:      #ff9933;
+$purple:      #8d00eb;
+$pink:        #da0086;
+$green:       #008812; // #12c456?
+$yellow:      #f0b400;
+$red:         #ec0000;
+$orange:      #d66b00;
 
 $white:       #fff;
 $gray-100:    #f8f9fa;
@@ -25,7 +25,7 @@ $gray-800:    #343a40;
 $gray-900:    #212529;
 $black:       #000;
 
-$primary:       $cyan;
+$primary:       $blue;
 $secondary:     $pink;
 $success:       $green;
 $danger:        $red;
@@ -34,7 +34,7 @@ $info:          $purple;
 $light:         $gray-100;
 $dark:          $gray-900;
 
-$primary-dark:  $blue;
+$primary-dark:  $cyan;
 
 $primary-950:   shade-color($primary, 90%);
 $primary-900:   shade-color($primary, 80%);
@@ -62,14 +62,14 @@ $primary-dark-700:   shade-color($primary-dark, 40%);
 // General styles
 // =============================================================================
 
-$body-bg:                 $white;
-$body-color:              $gray-900;
-$link-color:              $blue;
-$link-shade-percentage:   20%;
-$link-hover-color:        shift-color($link-color, $link-shade-percentage);
+$body-bg:                 #0e0e0e;
+$body-color:              $gray-100;
+$link-color:              $cyan;
+$link-tint-percentage:    20%;
+$link-hover-color:        tint-color($link-color, $link-tint-percentage);
 $code-color: $red;
 
-$border-color:            $primary-300;
+$border-color:            $primary-600;
 
 $box-shadow:              0 .5rem 1rem rgba($border-color, 0.3);
 $box-shadow-sm:           0 .125rem .25rem rgba($border-color, 0.15);
@@ -77,7 +77,7 @@ $box-shadow-lg:           0 1rem 3rem rgba($border-color, 0.35);
 $box-shadow-inset:        inset 0 1px 2px rgba($border-color, 0.15);
 
 $component-active-color:  black;
-$component-active-bg:     $primary-250;
+$component-active-bg:     $primary-650;
 
 $font-family-sans-serif: "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
@@ -91,16 +91,16 @@ $hr-opacity: 0.5;
 // Accordion
 // =============================================================================
 
-$accordion-button-active-bg:      tint-color($component-active-bg, 90%);
+$accordion-button-active-bg:      shade-color($component-active-bg, 90%);
 $accordion-border-color:          $border-color;
-$accordion-button-active-color:   $primary-700;
+$accordion-button-active-color:   $primary-300;
 
 
 // Alerts
 // =============================================================================
 
-$alert-bg-scale:                -80%;
-$alert-border-scale:            -70%;
+$alert-bg-scale:                80%;
+$alert-border-scale:            70%;
 $alert-color-scale:             40%;
 
 
@@ -136,18 +136,18 @@ $dropdown-dark-link-active-bg:              $primary-dark-700;
 // =============================================================================
 
 $input-border-color:                        $border-color;
-$input-focus-border-color:                  tint-color($input-border-color, 20%);
-$form-check-input-checked-bg-color:         $primary-300;
-$form-check-input-indeterminate-bg-color:   $primary-300;
-$form-range-track-bg:                       $primary-100;
+$input-focus-border-color:                  tint-color($input-border-color, 5%);
+$form-check-input-checked-bg-color:         $primary-700;
+$form-check-input-indeterminate-bg-color:   $primary-700;
+$form-range-track-bg:                       $primary-800;
 $form-range-thumb-bg:                       $primary;
 
-$input-group-addon-color:                   $primary-700;
-$input-group-addon-bg:                      $primary-50;
+$input-group-addon-color:                   $primary-400;
+$input-group-addon-bg:                      $primary-900;
 
-$form-file-button-color:                    $primary-700;
-$form-file-button-bg:                       $primary-50;
-$form-file-button-hover-bg:                 $primary-100;
+$form-file-button-color:                    $primary-400;
+$form-file-button-bg:                       $primary-900;
+$form-file-button-hover-bg:                 $primary-850;
 
 
 // List groups
@@ -185,7 +185,7 @@ $nav-tabs-link-hover-border-color:          $border-color;
 $nav-tabs-link-active-bg:                   $body-bg;
 $nav-tabs-link-active-border-color:         $border-color $border-color $nav-tabs-link-active-bg;
 
-$navbar-light-bg:                           $primary-100;
+$navbar-light-bg:                           $primary-900;
 
 
 // Popvers
