@@ -43,9 +43,9 @@ mark, .mark {
 
 $button-color-overrides: (
   // Background color, text color, text color when active
-  "primary":    ( $primary,   $black ),
+  "primary":    ( $primary,   $white ),
   "secondary":  ( $secondary, $black ),
-  "success":    ( $success,   $white ),
+  "success":    ( $success,   $black ),
   "danger":     ( $danger,    $white ),
   "warning":    ( $warning,   $black ),
   "info":       ( $info,      $white ),
@@ -63,10 +63,10 @@ $button-color-overrides: (
       $background: $background-color,
       $border: $background-color,
       $color: $text-color,
-      $hover-background: tint-color($background-color, $btn-hover-bg-tint-amount),
-      $hover-border: tint-color($background-color, $btn-hover-bg-tint-amount),
+      $hover-background: shift-color($background-color, $btn-hover-bg-shift-amount),
+      $hover-border: shift-color($background-color, $btn-hover-bg-shift-amount),
       $hover-color: $text-color,
-      $active-background: tint-color($background-color, $btn-active-bg-tint-amount),
+      $active-background: shift-color($background-color, $btn-active-bg-shift-amount),
       $active-border: $background-color,
       $active-color: $text-color,
       $disabled-color: $text-color
@@ -77,7 +77,7 @@ $button-color-overrides: (
     @include button-outline-variant(
       $color: $background-color,
       $color-hover: $text-color,
-      $active-background: tint-color($background-color, $btn-active-bg-tint-amount),
+      $active-background: shift-color($background-color, $btn-active-bg-shift-amount),
       $active-border: $background-color,
       $active-color: $text-color
       );
@@ -89,14 +89,14 @@ $button-color-overrides: (
 // =============================================================================
 
 $override-card-colors: (
-  "primary":    ($primary,    tint-color($primary, 50%),    tint-color($primary, 70%)),
-  "secondary":  ($secondary,  tint-color($secondary, 50%),  tint-color($secondary, 70%)),
-  "success":    ($success,    tint-color($success, 50%),    tint-color($success, 70%)),
-  "danger":     ($danger,     tint-color($danger, 50%),     tint-color($danger, 70%)),
-  "warning":    ($warning,    tint-color($warning, 50%),    tint-color($warning, 70%)),
-  "info":       ($info,       tint-color($info, 50%),       tint-color($info, 70%)),
-  "light":      ($light,      tint-color($light, 50%),      tint-color($light, 70%)),
-  "dark":       ($dark,       tint-color($dark, 70%),       tint-color($dark, 80%))
+  "primary":    ($primary,    shade-color($primary, 50%),    shade-color($primary, 70%)),
+  "secondary":  ($secondary,  shade-color($secondary, 50%),  shade-color($secondary, 70%)),
+  "success":    ($success,    shade-color($success, 50%),    shade-color($success, 70%)),
+  "danger":     ($danger,     shade-color($danger, 50%),     shade-color($danger, 70%)),
+  "warning":    ($warning,    shade-color($warning, 50%),    shade-color($warning, 70%)),
+  "info":       ($info,       shade-color($info, 50%),       shade-color($info, 70%)),
+  "light":      ($light,      shade-color($light, 50%),      shade-color($light, 70%)),
+  "dark":       ($dark,       shade-color($dark, 70%),       shade-color($dark, 80%))
 );
 
 @each $variant, $colors in $override-card-colors {

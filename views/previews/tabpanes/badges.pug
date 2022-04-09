@@ -3,31 +3,31 @@
   <h2>Rectangular badges</h2>
   <p>
     each variant in colorVariants
-      <span class="badge bg-#{variant} #{darkText(variant)}">#{variant}</span>&nbsp;
+      <span class="badge bg-#{variant} #{badgeInvertClass(variant)}">#{variant}</span>&nbsp;
   </p>
   
   <h2>Rounded badges</h2>
   <p>
     each variant in colorVariants
-      <span class="badge rounded-pill bg-#{variant} #{darkText(variant)}">#{variant}</span>&nbsp;
+      <span class="badge rounded-pill bg-#{variant} #{badgeInvertClass(variant)}">#{variant}</span>&nbsp;
   </p>
 
   <h2>Badges with buttons</h2>
 
   <button type="button" class="btn btn-primary">
-    | Notifications <span class="badge bg-danger">4</span>
+    | Notifications <span class="badge bg-danger #{badgeInvertClass('danger')}">4</span>
   </button>
 
   <button type="button" class="btn btn-primary position-relative me-4">
     | Inbox
-    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger #{badgeInvertClass('danger')}">
       | 99+ <span class="visually-hidden">unread messages</span>
     </span>
   </button>
   
   <button type="button" class="btn btn-primary position-relative">
     | Profile
-    <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger rounded-circle">
+    <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger #{badgeInvertClass('danger')} rounded-circle">
       <span class="visually-hidden">New alerts</span>
     </span>
   </button>

@@ -3,15 +3,15 @@
 // Base colors
 // =============================================================================
 
-$cyan:        #00b7ff;
+$cyan:        #39baff;
 $blue:        #2d4bff;
 $indigo:      #5c2ffd;
-$purple:      #8d00eb;
-$pink:        #da0086;
-$green:       #008812; // #12c456?
-$yellow:      #f0b400;
-$red:         #ec0000;
-$orange:      #d66b00;
+$purple:      #a02ffd;
+$pink:        #ff00f2;
+$green:       #00df56;
+$yellow:      #ffc000;
+$red:         #ff2424;
+$orange:      #ff8914;
 
 $white:       #fff;
 $gray-100:    #f1f1f1;
@@ -67,7 +67,7 @@ $body-color:              $gray-100;
 $link-color:              $cyan;
 $link-tint-percentage:    20%;
 $link-hover-color:        tint-color($link-color, $link-tint-percentage);
-$code-color: $red;
+$code-color:              $red;
 
 $border-color:            $primary-600;
 
@@ -91,7 +91,7 @@ $hr-opacity: 0.5;
 // Accordion
 // =============================================================================
 
-$accordion-button-active-bg:      shade-color($component-active-bg, 90%);
+$accordion-button-active-bg:      shade-color($component-active-bg, 85%);
 $accordion-border-color:          $border-color;
 $accordion-button-active-color:   $primary-300;
 
@@ -104,17 +104,32 @@ $alert-border-scale:            70%;
 $alert-color-scale:             40%;
 
 
+// Badge
+// =============================================================================
+
+$badge-color: $black;
+
+
+// Breadcrumb
+// =============================================================================
+
+$breadcrumb-divider-color:      $primary;
+$breadcrumb-active-color:       $gray-600;
+
+
 // Button
 // =============================================================================
 
-$btn-active-bg-tint-amount: 25%;
+$btn-hover-bg-shift-amount:     25%;
+$btn-active-bg-shift-amount:    30%;
 
 
 // Card
 // =============================================================================
 
 $card-border-color:                         $border-color;
-$card-cap-bg:                               $primary-50;
+$card-cap-bg:                               $primary-950;
+$card-bg:                                   $body-bg;
 
 
 // Dropdown

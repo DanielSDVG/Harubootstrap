@@ -24,21 +24,21 @@ tabs = {
 themes = {
   "haruki-light": {
     name: "Haruki Light",
-    whiteTextVariants: ["success", "danger", "info", "dark"],
+    textInvertOn: ["success", "danger", "info", "dark"],
     isDark: false,
-    applyWhiteTextOnCards: false
+    useInvertOnCards: false
   },
   "haruki-dark": {
     name: "Haruki Dark",
-    whiteTextVariants: ["primary", "secondary", "danger", "info", "dark"],
+    textInvertOn: ["secondary", "success", "warning", "light"],
     isDark: true,
-    applyWhiteTextOnCards: false
+    useInvertOnCards: false
   },
   "default": {
     name: "Bootstrap Default",
-    whiteTextVariants: ["primary", "secondary", "success", "danger", "dark"],
+    textInvertOn: ["primary", "secondary", "success", "danger", "dark"],
     isDark: false,
-    applyWhiteTextOnCards: true
+    useInvertOnCards: true
   }
 }
 
@@ -62,7 +62,7 @@ app.get('/', (req, res) => {
 
 app.get('/theme/:name', (req, res) => {
   res.render('preview', {
-    htmlTitle: 'Hello World',
+    htmlTitle: 'Harubootstrap themes',
     themeId: req.params.name,
     tabs: tabs,
     themeColors: themeColors,

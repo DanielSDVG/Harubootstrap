@@ -23,12 +23,12 @@ function buildThemeTask(name) {
     function buildThemeMinified() {
       return buildFile(name, "bootstrap", true)
     },
-    function buildTheme() {
+    /*function buildTheme() {
       return buildFile(name, "bootstrap", false)
     },
     function buildColorPreview() {
       return buildFile(name, "colorpreview", true)
-    }
+    }*/
   );
 }
 

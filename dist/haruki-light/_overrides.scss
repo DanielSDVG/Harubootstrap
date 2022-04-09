@@ -63,10 +63,10 @@ $button-color-overrides: (
       $background: $background-color,
       $border: $background-color,
       $color: $text-color,
-      $hover-background: tint-color($background-color, $btn-hover-bg-tint-amount),
-      $hover-border: tint-color($background-color, $btn-hover-bg-tint-amount),
+      $hover-background: shift-color($background-color, $btn-hover-bg-shift-amount),
+      $hover-border: shift-color($background-color, $btn-hover-bg-shift-amount),
       $hover-color: $text-color,
-      $active-background: tint-color($background-color, $btn-active-bg-tint-amount),
+      $active-background: shift-color($background-color, $btn-active-bg-shift-amount),
       $active-border: $background-color,
       $active-color: $text-color,
       $disabled-color: $text-color
@@ -77,7 +77,7 @@ $button-color-overrides: (
     @include button-outline-variant(
       $color: $background-color,
       $color-hover: $text-color,
-      $active-background: tint-color($background-color, $btn-active-bg-tint-amount),
+      $active-background: shift-color($background-color, $btn-active-bg-shift-amount),
       $active-border: $background-color,
       $active-color: $text-color
       );
