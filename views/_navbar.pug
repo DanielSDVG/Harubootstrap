@@ -1,0 +1,26 @@
+mixin navbar(wrapInContainer)
+  if wrapInContainer
+    nav.navbar.navbar-expand-lg.bg-light.navbar-light.navbar-fixed-top.d-print-none
+      .container
+        +_navbar()
+  else
+    nav.navbar.navbar-expand-lg.bg-light.navbar-light.navbar-fixed-top.d-print-none.px-3
+      +_navbar()
+
+
+mixin _navbar()
+  a.navbar-brand(href="/") harubootstrap
+
+  button.navbar-toggler(type="button" data-bs-toggle="collapse" data-bs-target="#main-nav"
+  aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation")
+    span.navbar-toggler-icon
+
+  .collapse.navbar-collapse#main-nav
+    ul.navbar-nav.ms-auto.mb-2.mb-lg-0
+      li.nav-item.dropdown
+        a.nav-link.dropdown-toggle(href="#" id="theme-dropdown" role="button" data-bs-toggle="dropdown" 
+        aria-expanded="false") Themes
+        ul.dropdown-menu.dropdown-menu-end#theme-list(aria-labelledby="theme-dropdown")
+          each theme, urlName in themeList
+            li
+              a.dropdown-item(href=`/theme/${urlName}`)= theme.name

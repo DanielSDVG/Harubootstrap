@@ -1,3 +1,28 @@
-#preview-sidebar {
-  max-width: 240px;
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+@media all and (min-width: 768px) {
+
+  body {
+    overflow-y: hidden;
+    height: 100vh;
+  }
+
+  #preview-sidebar-wrapper {
+    width: 256px;
+  }
+  #preview-content-wrapper {
+    width: calc(100% - 256px);
+  }
+
+  #preview, #preview > div {
+    height: calc(100vh - 56px);
+  }
+  
+  #preview-sidebar, #preview-content {
+    height: 100%;
+    overflow: hidden scroll;
+  }
 }

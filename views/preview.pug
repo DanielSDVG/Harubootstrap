@@ -5,44 +5,49 @@ block link
   link(rel="stylesheet" href=`/css/themes/${themeId}/bootstrap.min.css`)
   link(rel="stylesheet" href=`/css/themes/${themeId}/colorpreview.min.css`)
   link(rel="stylesheet" href="/css/layout.css")
+  link(rel="stylesheet" href="/css/preview.css")
+
+block navbar
+  +navbar(false)
 
 block content
   include previews/functions.pug
   include previews/mixins.pug
   include previews/symbols.svg
 
-  .row
-    .col-md-3#preview-sidebar
-      ul.nav.nav-pills.flex-column
-        each title, id in tabs
-          li.nav-item
-            if id === defaultTab
-              button.nav-link.active(data-bs-toggle="tab" data-bs-target=`#page-${id}`)= title
-            else
-              button.nav-link(data-bs-toggle="tab" data-bs-target=`#page-${id}`)= title
+  .row.gx-0#preview
+    .col-12#preview-sidebar-wrapper
+      .p-3#preview-sidebar
+        ul.nav.nav-pills.flex-column
+          each title, id in tabs
+            li.nav-item
+              if id === defaultTab
+                button.nav-link.active(data-bs-toggle="tab" data-bs-target=`#page-${id}`)= title
+              else
+                button.nav-link(data-bs-toggle="tab" data-bs-target=`#page-${id}`)= title
 
-    .col-12.col-md.mt-4.mt-md-0.tab-content
+    .col-12.mt-md-02#preview-content-wrapper
+      .p-3.tab-content#preview-content
+        h1= theme.name
+        hr
 
-      h1= theme.name
-      hr
-
-      include previews/tabpanes/accordion.pug
-      include previews/tabpanes/alerts.pug
-      include previews/tabpanes/badges.pug
-      include previews/tabpanes/breadcrumbs.pug
-      include previews/tabpanes/buttons.pug
-      include previews/tabpanes/cards.pug
-      include previews/tabpanes/carousel.pug
-      include previews/tabpanes/colors.pug
-      include previews/tabpanes/forms.pug
-      include previews/tabpanes/modal.pug
-      include previews/tabpanes/navtab.pug
-      include previews/tabpanes/progress.pug
-      include previews/tabpanes/spinners.pug
-      include previews/tabpanes/tables.pug
-      include previews/tabpanes/toasts.pug
-      include previews/tabpanes/tooltips.pug
-      include previews/tabpanes/typography.pug
+        include previews/tabpanes/accordion.pug
+        include previews/tabpanes/alerts.pug
+        include previews/tabpanes/badges.pug
+        include previews/tabpanes/breadcrumbs.pug
+        include previews/tabpanes/buttons.pug
+        include previews/tabpanes/cards.pug
+        include previews/tabpanes/carousel.pug
+        include previews/tabpanes/colors.pug
+        include previews/tabpanes/forms.pug
+        include previews/tabpanes/modal.pug
+        include previews/tabpanes/navtab.pug
+        include previews/tabpanes/progress.pug
+        include previews/tabpanes/spinners.pug
+        include previews/tabpanes/tables.pug
+        include previews/tabpanes/toasts.pug
+        include previews/tabpanes/tooltips.pug
+        include previews/tabpanes/typography.pug
 
 block append bodyscript
   script.
