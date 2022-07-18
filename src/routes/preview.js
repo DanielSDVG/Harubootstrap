@@ -56,17 +56,21 @@ themeColors = [
   "gray"
 ]
 
+baseContext = {
+  htmlTitle: 'Harubootstrap themes',
+  themeList: themes,
+};
+
 app.get('/', (req, res) => {
-  res.redirect('/theme/haruki-light')
+  res.render('index', baseContext)
 });
 
 app.get('/theme/:name', (req, res) => {
   res.render('preview', {
-    htmlTitle: 'Harubootstrap themes',
+    ...baseContext,
     themeId: req.params.name,
     tabs: tabs,
     themeColors: themeColors,
-    themeList: themes,
     theme: themes[req.params.name],
     defaultTab: "accordion",
     colorVariants: ["primary", "secondary", "success", "danger", "warning", "info", "light", "dark"],
